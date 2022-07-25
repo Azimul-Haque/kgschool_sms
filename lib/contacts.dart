@@ -93,7 +93,7 @@ class _ContactsListState extends State<ContactsList> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
           ),
-          title: const Text('SMS/MMS Example'),
+          title: const Text('Contact List'),
         ),
         body: ListView(
           children: <Widget>[
