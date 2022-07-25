@@ -164,7 +164,8 @@ class _HomePageState extends State<HomePage> {
                     onChanged: (value) {
                       print(value);
                     },
-                  )
+                  ),
+                  const Divider(),
                 ],
               ),
             ),
