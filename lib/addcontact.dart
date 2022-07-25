@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import 'package:kgschool_sms/models/contact_model.dart';
 
 class AddContact extends StatefulWidget {
   const AddContact({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _AddContactState extends State<AddContact> {
   final _formKey = GlobalKey<FormState>();
   late TextEditingController _controllerName, _controllerContactNumber;
   String? name, contactnumber;
+  late ContactModel newContact;
 
   @override
   void initState() {
