@@ -197,12 +197,11 @@ class _ContactsListState extends State<ContactsList> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('AlertDialog Title'),
+          title: const Text('Delete Contact'),
           content: SingleChildScrollView(
             child: ListBody(
               children: const <Widget>[
                 Text('This is a demo alert dialog.'),
-                Text('Would you like to approve of this message?'),
               ],
             ),
           ),
