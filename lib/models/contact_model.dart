@@ -56,7 +56,7 @@ class ContactHelper {
     }
   }
 
-  Future<List<ContactModel>> getAllExams() async {
+  Future<List<ContactModel>> getAllContacts() async {
     List<Map<String, dynamic>> contacts = await db.query(tableName);
     return List.generate(contacts.length, (i) {
       return ContactModel(
