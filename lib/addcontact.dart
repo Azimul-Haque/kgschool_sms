@@ -60,15 +60,6 @@ class _AddContactState extends State<AddContact> {
                 keyboardType: TextInputType.text,
                 onChanged: (String value) => setState(() {}),
               ),
-              trailing: IconButton(
-                icon: const Icon(Icons.add),
-                onPressed: _controllerName.text.isEmpty
-                    ? null
-                    : () => setState(() {
-                          people.add(_controllerName.text.toString());
-                          _controllerName.clear();
-                        }),
-              ),
             ),
             const Divider(),
             ListTile(
