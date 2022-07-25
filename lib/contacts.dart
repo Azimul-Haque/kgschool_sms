@@ -123,7 +123,7 @@ class _ContactsListState extends State<ContactsList> {
                                 ),
                                 IconButton(
                                   onPressed: () {},
-                                  icon: const Icon(Icons.delete_outline),
+                                  icon: const Icon(Icons.delete_forever,
                                 ),
                               ],
                             ),
