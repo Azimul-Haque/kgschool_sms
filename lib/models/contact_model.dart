@@ -77,7 +77,7 @@ class ContactHelper {
         whereArgs: [contact.id],
       );
     } catch (_) {
-      print(_);
+      // print(_);
     }
   }
 
@@ -89,13 +89,16 @@ class ContactHelper {
         whereArgs: [id],
       );
     } catch (_) {
-      print(_);
+      // print(_);
     }
   }
 
-  deleteContactTable() async {
-    // final db = await database;
-    await db.rawDelete("Delete * from " + tableName);
+  Future<void> deleteContactTable() async {
+    try {
+      await db.rawDelete("Delete * from " + tableName);
+    } catch (_) {
+      // print(_);
+    }
   }
 
   // Future<List<ContactModel>> getSomeQuestions (String amount) async{
