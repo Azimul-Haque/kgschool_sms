@@ -83,9 +83,9 @@ class _HomePageState extends State<HomePage> {
               ExcelToJson().convert().then((onValue) {
                 // print(jsonEncode(onValue).length);
                 setState(() {
-                  parseddata = {'data': onValue};
+                  parseddata = {'data': onValue} as String;
                   // parseddata = onValue.split(",");
-                  print(parseddata[0]);
+                  print(parseddata);
                 });
               });
             },
