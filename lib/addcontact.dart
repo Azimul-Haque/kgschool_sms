@@ -84,7 +84,7 @@ class _AddContactState extends State<AddContact> {
                         (states) => const EdgeInsets.symmetric(vertical: 16)),
                   ),
                   onPressed: () {
-                    if (_formKey.currentState.validate()) {
+                    if (_formKey.currentState!.validate()) {
                       _addContact();
                     }
                   },
