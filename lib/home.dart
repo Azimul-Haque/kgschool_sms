@@ -20,8 +20,6 @@ class _HomePageState extends State<HomePage> {
   List<ContactModel> contacts = [];
   List<String> recipients = [];
   int _counter = 0;
-  bool tableAlreadyCreated = true;
-  prevPath = file.files.first.path!;
 
   @override
   void initState() {
