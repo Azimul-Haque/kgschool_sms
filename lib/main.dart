@@ -8,7 +8,7 @@ void main() async {
   final db = await openDatabase(join(await getDatabasesPath(), "contacts.db"),
       onCreate: (db, version) {
     return db.execute(
-        "CREATE TABLE $tableName($columnId INTEGER PRIMARY KEY AUTOINCREMENT, $columnName TEXT, $columnContactNumber TEXT)");
+        "CREATE TABLE contacts(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, contactnumber TEXT)");
   }, version: 1);
 }
 
