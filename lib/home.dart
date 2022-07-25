@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                   // print('${decodeddata.runtimeType} : $decodeddata');
                   // print(decodeddata.length);
                   if (decodeddata.length > 200) {
-                    _contactHelper.deleteContactTable();
+                    await _contactHelper.deleteContactTable();
                   }
                   var totalpassed = 0;
                   for (var item in decodeddata) {
