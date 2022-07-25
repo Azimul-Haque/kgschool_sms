@@ -9,11 +9,8 @@ final String columnContactNumber = "contactnumber";
 
 class ExamModel {
   int id;
-  final int totalqstn;
-  final int duration;
-  final int rightanswer;
-  final int wronganswer;
-  final String createdat;
+  final String name;
+  final String contactnumber;
 
   ExamModel(
       {this.id,
