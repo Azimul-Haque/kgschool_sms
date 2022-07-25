@@ -50,17 +50,21 @@ class _ContactsListState extends State<ContactsList> {
                       itemCount: contacts.length,
                       itemBuilder: (context, index) {
                         return Card(
-                        child: ListTile(
-                          // leading: CircleAvatar(child: Text(questions[index].question[0]),),
-                          title: Text(questions[index].question),
-                          subtitle: Text('- ' + questions[index].answer),
-                          trailing: listPopUpMenu(questions[index]),
-                          // onTap: (){
-                          //   // Route route = MaterialPageRoute(builder: (context) => PageTwo(questions[index]));
-                          //   // Navigator.push(context, route);
-                          //   // _showSnackbar("তথ্য হালনাগাদ হয়েছে!");
-                          // },
-                        ),
+                          child: ListTile(
+                            // leading: CircleAvatar(child: Text(questions[index].question[0]),),
+                            title: Text(questions[index].question),
+                            subtitle: Text('- ' + questions[index].answer),
+                            trailing: listPopUpMenu(questions[index]),
+                            // onTap: (){
+                            //   // Route route = MaterialPageRoute(builder: (context) => PageTwo(questions[index]));
+                            //   // Navigator.push(context, route);
+                            //   // _showSnackbar("তথ্য হালনাগাদ হয়েছে!");
+                            // },
+                          ),
+                          margin: EdgeInsets.only(
+                              top: 5, right: 10, bottom: 5, left: 10),
+                          elevation: 2,
+                        );
                       },
                     )
                   : Center(
