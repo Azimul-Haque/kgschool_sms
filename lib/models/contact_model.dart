@@ -5,10 +5,7 @@ import 'dart:async';
 const String tableName = "contacts";
 const String columnId = "id";
 final String columnName = "name";
-final String columnDuration = "duration";
-final String columnRightAnswer = "rightanswer";
-final String columnWrongAnswer = "wronganswer";
-final String columnCreatedAt = "createdat";
+final String columnContactNumber = "contactnumber";
 
 class ExamModel {
   int id;
