@@ -67,6 +67,7 @@ class _AddContactState extends State<AddContact> {
               title: TextField(
                 decoration: const InputDecoration(labelText: 'Mobile Number'),
                 controller: _controllerContactNumber,
+                keyboardType: TextInputType.number,
                 onChanged: (String value) => setState(() {}),
               ),
             ),
