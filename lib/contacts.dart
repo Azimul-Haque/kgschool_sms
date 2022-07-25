@@ -63,8 +63,8 @@ class _ContactsListState extends State<ContactsList> {
                             height: 20.0,
                           ),
                           isLoading == true
-                              ? CircularProgressIndicator()
-                              : Text("কোন নতুন পরীক্ষা নেই!"),
+                              ? const CircularProgressIndicator()
+                              : const Text("কোন নতুন নাম্বার নেই!"),
                         ],
                       ),
                     ),
