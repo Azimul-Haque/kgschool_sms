@@ -148,4 +148,15 @@ class _HomePageState extends State<HomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  void _addContact() async {
+    newContact = ContactModel(
+      id: 1,
+      name: name.toString(),
+      contactnumber: contactnumber.toString(),
+    );
+    await _contactHelper.insertContact(newContact);
+    showSimpleSnackBar(context, 'Added successfully!');
+    Navigator.pop(context);
+  }
 }
