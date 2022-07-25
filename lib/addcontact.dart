@@ -111,5 +111,6 @@ class _AddContactState extends State<AddContact> {
     );
     await _contactHelper.insertContact(newContact);
     showSimpleSnackBar(context, 'Added successfully!');
+    Navigator.pop(context);
   }
 }
