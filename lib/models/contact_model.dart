@@ -58,9 +58,9 @@ class ContactHelper {
     });
   }
 
-  Future<void> insertContact(ContactModel exam) async {
+  Future<void> insertContact(ContactModel contact) async {
     try {
-      db.insert(tableName, exam.toMap(),
+      db.insert(tableName, contact.toMap(),
           conflictAlgorithm: ConflictAlgorithm.replace);
       // print("Kaaj e porjonto");
     } catch (_) {
@@ -68,7 +68,7 @@ class ContactHelper {
     }
   }
 
-  Future<void> updateContact(Dog dog) async {
+  Future<void> updateContact(ContactModel dog) async {
     // Get a reference to the database.
     final db = await database;
 
