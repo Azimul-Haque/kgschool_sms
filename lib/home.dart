@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.message),
+        // leading: const Icon(Icons.message),
         title: const Text('KG School SMS'),
         actions: [
           IconButton(
