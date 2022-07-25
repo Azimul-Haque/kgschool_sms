@@ -25,7 +25,7 @@ class ContactModel {
 }
 
 class ContactHelper {
-  late Database db;
+  Database db;
 
   ContactHelper() {
     initDatabase();
