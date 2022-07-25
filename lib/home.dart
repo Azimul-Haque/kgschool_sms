@@ -20,10 +20,21 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     promptSMS();
+    _loadContacts();
   }
 
   void promptSMS() async {
     await Permission.sms.request();
+  }
+
+  _loadContacts() async {
+    await Future.delayed(const Duration(seconds: 1)); // THIS LITLE LINE!!!
+    var newcontacts = await _contactHelper.getAllContacts();
+    setState(() {
+      contacts = newcontacts.reversed.toList();
+      isLoading = false;
+    });
+    print(contacts.length);
   }
 
   void _sendSMS() async {
