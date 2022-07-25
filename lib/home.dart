@@ -173,10 +173,8 @@ class _HomePageState extends State<HomePage> {
                       labelText: 'Name *',
                     ),
                     onSaved: (value) {},
-                    validator: (value) {
-                      
-                    },
-                  )
+                    validator: (value) {},
+                  ),
                   Text(parseddata),
                 ],
               ),
