@@ -185,6 +185,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const Divider(),
                   SizedBox(
+                    width: 900,
                     child: ElevatedButton(
                       onPressed: () {
                         // if (_formKey.currentState!.validate()) {
