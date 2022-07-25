@@ -76,10 +76,8 @@ class ContactHelper {
     await db.update(
       'dogs',
       contact.toMap(),
-      // Ensure that the Dog has a matching id.
       where: 'id = ?',
-      // Pass the Dog's id as a whereArg to prevent SQL injection.
-      whereArgs: [dog.id],
+      whereArgs: [contact.id],
     );
   }
 
