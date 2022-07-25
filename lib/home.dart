@@ -143,10 +143,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Text(parseddata),
                   const Text(
-                    'SMS sent:',
+                    'মোট নাম্বারঃ ',
                   ),
                   Text(
-                    '$_counter',
+                    recipients,
                     style: Theme.of(context).textTheme.headline4,
                   ),
                 ],
