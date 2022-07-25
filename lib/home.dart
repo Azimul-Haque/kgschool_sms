@@ -152,6 +152,7 @@ class _HomePageState extends State<HomePage> {
                   const Divider(),
                   DropdownButton<String>(
                     hint: const Text('কতগুলো মেসেজ পাঠাতে চান?'),
+                    isExpanded: true,
                     items: <String>[
                       'কতগুলো মেসেজ পাঠাতে চান?',
                       'প্রথম ২৫০ টি নম্বরে',
