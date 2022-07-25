@@ -101,7 +101,8 @@ class _HomePageState extends State<HomePage> {
                     await _contactHelper.insertContact(newContact);
                     totalpassed++;
                   }
-                  showSimpleSnackBar(context, 'Added successfully!');
+                  showSimpleSnackBar(context,
+                      totalpassed.toString() + ' টি নম্বর যোগ করা হয়েছে!');
                 });
               });
             },
