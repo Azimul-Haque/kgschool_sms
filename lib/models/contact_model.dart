@@ -62,10 +62,25 @@ class ContactHelper {
     try {
       db.insert(tableName, exam.toMap(),
           conflictAlgorithm: ConflictAlgorithm.replace);
-      print("Kaaj e porjonto");
+      // print("Kaaj e porjonto");
     } catch (_) {
       // print(_);
     }
+  }
+
+  Future<void> updateContact(Dog dog) async {
+    // Get a reference to the database.
+    final db = await database;
+
+    // Update the given Dog.
+    await db.update(
+      'dogs',
+      dog.toMap(),
+      // Ensure that the Dog has a matching id.
+      where: 'id = ?',
+      // Pass the Dog's id as a whereArg to prevent SQL injection.
+      whereArgs: [dog.id],
+    );
   }
 
   // Future<List<ContactModel>> getSomeQuestions (String amount) async{
