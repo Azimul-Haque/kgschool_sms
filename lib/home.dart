@@ -161,7 +161,9 @@ class _HomePageState extends State<HomePage> {
                         child: Text(value),
                       );
                     }).toList(),
-                    onChanged: (_) {},
+                    onChanged: (value) {
+                      print(value);
+                    },
                   )
                 ],
               ),
