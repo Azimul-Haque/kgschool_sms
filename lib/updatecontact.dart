@@ -29,7 +29,8 @@ class _UpdateContactState extends State<UpdateContact> {
   @override
   void initState() {
     super.initState();
-    print(widget.name);
+    _controllerName.text = widget.name;
+    _controllerContactNumber.text = widget.contactnumber;
   }
 
   @override
