@@ -65,7 +65,7 @@ class _AddContactState extends State<AddContact> {
             ListTile(
               leading: const Icon(Icons.phone),
               title: TextField(
-                decoration: const InputDecoration(labelText: 'Add Message'),
+                decoration: const InputDecoration(labelText: 'Mobile Number'),
                 controller: _controllerContactNumber,
                 onChanged: (String value) => setState(() {}),
               ),
