@@ -38,13 +38,6 @@ class _AddContactState extends State<AddContact> {
     }
   }
 
-  Future<bool> _canSendSMS() async {
-    bool _result = await canSendSMS();
-    setState(() => _canSendSMSMessage =
-        _result ? 'This unit can send SMS' : 'This unit cannot send SMS');
-    return _result;
-  }
-
   Widget _phoneTile(String name) {
     return Padding(
       padding: const EdgeInsets.all(3),
