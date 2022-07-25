@@ -24,10 +24,10 @@ class ContactModel {
   }
 }
 
-class ExamHelper {
+class ContactHelper {
   Database db;
 
-  ExamHelper() {
+  ContactHelper() {
     initDatabase();
   }
 
