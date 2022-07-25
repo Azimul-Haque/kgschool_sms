@@ -21,7 +21,7 @@ class _ContactsListState extends State<ContactsList> {
   void initState() {
     super.initState();
     isLoading = true;
-    _loadDB();
+    _loadContacts();
   }
 
   @override
@@ -85,7 +85,7 @@ class _ContactsListState extends State<ContactsList> {
     );
   }
 
-  _loadDB() async {
+  _loadContacts() async {
     await Future.delayed(const Duration(seconds: 1)); // THIS LITLE LINE!!!
     var newcontacts = await _contactHelper.getAllContacts();
     setState(() {
