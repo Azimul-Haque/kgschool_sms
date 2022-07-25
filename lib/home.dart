@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kgschool_sms/addcontact.dart';
 import 'package:kgschool_sms/contacts.dart';
+import 'package:kgschool_sms/globals.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_sms/flutter_sms.dart';
