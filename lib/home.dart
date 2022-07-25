@@ -199,7 +199,7 @@ class _HomePageState extends State<HomePage> {
                         //   _updateContact();
                         // }
                       },
-                      child: const Text('Add Contact'),
+                      child: const Text('মেসেজ পাঠান'),
                     ),
                   ),
                   Text(parseddata),
