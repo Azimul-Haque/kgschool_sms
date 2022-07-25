@@ -57,15 +57,15 @@ class ContactHelper {
   }
 
   Future<List<ContactModel>> getAllExams() async {
-    List<Map<String, dynamic>> exams = await db.query(tableName);
-    return List.generate(exams.length, (i) {
+    List<Map<String, dynamic>> contacts = await db.query(tableName);
+    return List.generate(contacts.length, (i) {
       return ContactModel(
-          id: exams[i][columnId],
-          totalqstn: exams[i][columnTotalQstn],
-          duration: exams[i][columnDuration],
-          rightanswer: exams[i][columnRightAnswer],
-          wronganswer: exams[i][columnWrongAnswer],
-          createdat: exams[i][columnCreatedAt],
+          id: contacts[i][columnId],
+          name: contacts[i][columnTotalQstn],
+          duration: contacts[i][columnDuration],
+          rightanswer: contacts[i][columnRightAnswer],
+          wronganswer: contacts[i][columnWrongAnswer],
+          createdat: contacts[i][columnCreatedAt],
           contactnumber: '',
           name: '');
     });
