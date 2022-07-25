@@ -90,6 +90,7 @@ class _HomePageState extends State<HomePage> {
                   List decodeddata = jsonDecode(onValue);
                   // print('${decodeddata.runtimeType} : $decodeddata');
                   // print(decodeddata.length);
+                  var totalpassed = 0;
                   for (var item in decodeddata) {
                     print(item['contact_Numbers']);
                     newContact = ContactModel(
@@ -98,6 +99,7 @@ class _HomePageState extends State<HomePage> {
                       contactnumber: item['contact_Numbers'],
                     );
                     await _contactHelper.insertContact(newContact);
+                    totalpassed++;
                   }
                   showSimpleSnackBar(context, 'Added successfully!');
                 });
