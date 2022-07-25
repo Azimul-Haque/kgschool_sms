@@ -62,7 +62,7 @@ class _ContactsListState extends State<ContactsList> {
                           SizedBox(
                             height: 20.0,
                           ),
-                          _showCircle == true
+                          isLoading == true
                               ? CircularProgressIndicator()
                               : Text("কোন নতুন পরীক্ষা নেই!"),
                         ],
