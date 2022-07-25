@@ -17,7 +17,7 @@ class _ContactsListState extends State<ContactsList> {
   final ContactHelper _contactHelper = ContactHelper();
   List<ContactModel> contacts = [];
   late bool isLoading;
-  bool refresh = false;
+  bool refresh = await Navigator.push(context, MaterialPageRoute(builder: (_) => Page2("Foo")));;
 
   @override
   void initState() {
