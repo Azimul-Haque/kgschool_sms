@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   parseddata = onValue!;
                   // parseddata = onValue.split(",");
-                  print(parseddata.01738696556);
+                  print(parseddata[01738696556]);
                 });
               });
             },
