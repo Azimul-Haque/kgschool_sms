@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import 'package:kgschool_sms/globals.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 
 class AddContact extends StatefulWidget {
@@ -109,6 +110,6 @@ class _AddContactState extends State<AddContact> {
       contactnumber: contactnumber.toString(),
     );
     await _contactHelper.insertContact(newContact);
-    // print(_result);
+    showSimpleSnackBar(context, 'Added successfully!');
   }
 }
