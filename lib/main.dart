@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:kgschool_sms/globals.dart';
 import 'package:kgschool_sms/home.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final db = await openDatabase(join(await getDatabasesPath(), "contacts.db"),
+  db = await openDatabase(join(await getDatabasesPath(), "contacts.db"),
       onCreate: (db, version) {
     return db.execute(
         "CREATE TABLE contacts(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, contactnumber TEXT)");
