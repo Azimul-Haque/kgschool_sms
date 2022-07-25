@@ -5,10 +5,11 @@ import 'package:sqflite/sqflite.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final database = openDatabase(
-    join(await getDatabasesPath(), 'contacts.db'),
-  );
-  runApp(const MyApp());
+  final db = await openDatabase(join(await getDatabasesPath(), "contacts.db"),
+      onCreate: (db, version) {
+    return db.execute(
+        "CREATE TABLE $tableName($columnId INTEGER PRIMARY KEY AUTOINCREMENT, $columnName TEXT, $columnContactNumber TEXT)");
+  }, version: 1);
 }
 
 class MyApp extends StatelessWidget {
