@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: const InputDecoration(
                       icon: Icon(Icons.sms),
                       hintText: 'What do people call you?',
-                      labelText: 'Name *',
+                      labelText: 'টেক্সট মেসেজ লিখুন',
                     ),
                     onSaved: (value) {},
                     validator: (value) {},
