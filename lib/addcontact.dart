@@ -13,8 +13,9 @@ class AddContact extends StatefulWidget {
 
 class _AddContactState extends State<AddContact> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _controllerName = TextEditingController();
-  TextEditingController _controllerContactNumber = TextEditingController();
+  final TextEditingController _controllerName = TextEditingController();
+  final TextEditingController _controllerContactNumber =
+      TextEditingController();
   String? name, contactnumber;
   late ContactModel newContact;
   late ContactHelper _contactHelper;
@@ -22,10 +23,7 @@ class _AddContactState extends State<AddContact> {
   @override
   void initState() {
     super.initState();
-    initPlatformState();
   }
-
-  Future<void> initPlatformState() async {}
 
   @override
   Widget build(BuildContext context) {
