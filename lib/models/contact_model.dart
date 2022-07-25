@@ -2,8 +2,8 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'dart:async';
 
-final String tableName = "exams";
-final String columnId = "id";
+const String tableName = "contacts";
+const String columnId = "id";
 final String columnTotalQstn = "totalqstn";
 final String columnDuration = "duration";
 final String columnRightAnswer = "rightanswer";
