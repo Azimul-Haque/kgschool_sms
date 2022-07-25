@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                     'মোট নাম্বারঃ ',
                   ),
                   Text(
-                    recipients,
+                    recipients.toString(),
                     style: Theme.of(context).textTheme.headline4,
                   ),
                 ],
