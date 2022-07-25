@@ -71,13 +71,16 @@ class ContactHelper {
   Future<void> updateContact(ContactModel contact) async {
     // Get a reference to the database.
     // final db = await database;
-
-    await db.update(
-      tableName,
-      contact.toMap(),
-      where: 'id = ?',
-      whereArgs: [contact.id],
-    );
+    try {
+      await db.update(
+        tableName,
+        contact.toMap(),
+        where: 'id = ?',
+        whereArgs: [contact.id],
+      );
+    } catch (_) {
+      // print(_);
+    }
   }
 
   // Future<List<ContactModel>> getSomeQuestions (String amount) async{
