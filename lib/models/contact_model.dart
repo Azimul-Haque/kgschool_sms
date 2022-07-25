@@ -17,11 +17,8 @@ class ContactModel {
   Map<String, dynamic> toMap() {
     return {
       // columnId: this.id,
-      columnTotalQstn: this.totalqstn,
-      columnDuration: this.duration,
-      columnRightAnswer: this.rightanswer,
-      columnWrongAnswer: this.wronganswer,
-      columnCreatedAt: this.createdat,
+      columnName: name,
+      columnContactNumber: contactnumber,
     };
   }
 }
