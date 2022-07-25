@@ -189,7 +189,7 @@ class _ContactsListState extends State<ContactsList> {
     print(adhoccontacts.length);
   }
 
-  Future<void> show(BuildContext context) async {
+  Future<void> showDeleteDialog(BuildContext context) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
