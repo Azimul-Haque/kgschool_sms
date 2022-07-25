@@ -29,19 +29,6 @@ class _ContactsListState extends State<ContactsList> {
     _controllerMessage = TextEditingController();
   }
 
-  Future<void> _sendSMS(List<String> recipients) async {
-    try {
-      String _result = await sendSMS(
-        message: _controllerMessage.text,
-        recipients: recipients,
-        sendDirect: sendDirect,
-      );
-      setState(() => _message = _result);
-    } catch (error) {
-      setState(() => _message = error.toString());
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
