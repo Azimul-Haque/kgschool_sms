@@ -17,16 +17,12 @@ class _ContactsListState extends State<ContactsList> {
   final ContactHelper _contactHelper = ContactHelper();
   List<ContactModel> contacts = [];
   late bool isLoading;
-  bool refresh = false;
 
   @override
   void initState() {
     super.initState();
     isLoading = true;
     _loadContacts();
-    if (refresh == true) {
-      _loadContacts();
-    }
   }
 
   @override
@@ -117,5 +113,11 @@ class _ContactsListState extends State<ContactsList> {
       isLoading = false;
     });
     // print(contacts.length);
+  }
+
+  refresh() {
+    setState(() {
+      //all the reload processes
+    });
   }
 }
