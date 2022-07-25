@@ -42,7 +42,7 @@ class _UpdateContactState extends State<UpdateContact> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
           ),
-          title: const Text('Add Contact'),
+          title: const Text('Update Contact'),
         ),
         body: Form(
           key: _formKey,
