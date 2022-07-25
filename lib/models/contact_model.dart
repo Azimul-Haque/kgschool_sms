@@ -98,11 +98,6 @@ class ContactHelper {
     db.rawDelete("Delete * from option");
   }
 
-  dropTable() async {
-    final db = await database;
-    db.query('SELECT * FROM cloudnet360.db WHERE name =option and type=table');
-  }
-
   // Future<List<ContactModel>> getSomeQuestions (String amount) async{
   //   List<Map<String, dynamic>> questions = await db.rawQuery("SELECT * FROM " + tableName + " ORDER BY RANDOM() LIMIT " + amount, null);
   //   return List.generate(questions.length, (i){
