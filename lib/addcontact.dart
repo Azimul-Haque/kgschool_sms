@@ -48,7 +48,9 @@ class _AddContactState extends State<AddContact> {
                   controller: _controllerName,
                   decoration: const InputDecoration(labelText: 'Name'),
                   keyboardType: TextInputType.text,
-                  onChanged: (String value) => setState(() {}),
+                  onChanged: (String value) => setState(() {
+                    name = value;
+                  }),
                   validator: (text) {
                     if (text == null || text.isEmpty) {
                       return 'Name is empty';
