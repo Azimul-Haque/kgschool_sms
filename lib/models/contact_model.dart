@@ -95,7 +95,7 @@ class ContactHelper {
 
   Future<void> deleteContactTable() async {
     try {
-      await db.rawDelete("Delete * from " + tableName);
+      await db.rawDelete("Delete * from " + tableName + "where 0=0;");
     } catch (_) {
       print(_);
     }
