@@ -8,7 +8,7 @@ const String columnName = "name";
 const String columnContactNumber = "contactnumber";
 
 class ContactModel {
-  int id;
+  final int id;
   final String name;
   final String contactnumber;
 
