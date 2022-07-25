@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage> {
                       toolbarOptions:
                           const ToolbarOptions(copy: true, paste: true),
                       minLines: 3,
-                      maxLines: 10,
+                      maxLines: 5,
                       autovalidateMode: AutovalidateMode.always,
                       decoration: const InputDecoration(
                         icon: Icon(Icons.sms),
