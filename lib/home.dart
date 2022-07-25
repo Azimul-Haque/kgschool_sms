@@ -172,11 +172,9 @@ class _HomePageState extends State<HomePage> {
                       hintText: 'What do people call you?',
                       labelText: 'Name *',
                     ),
-                    onSaved: (String value) {
-                     
-                    },
-                    validator: (String value) {
-                      return value.contains('@') ? 'Do not use the @ char.' : null;
+                    onSaved: (value) {},
+                    validator: (value) {
+                      
                     },
                   )
                   Text(parseddata),
