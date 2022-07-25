@@ -165,15 +165,18 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   const Divider(),
-                  TextFormField(
-                    autovalidateMode: AutovalidateMode.always,
-                    decoration: const InputDecoration(
-                      icon: Icon(Icons.sms),
-                      hintText: 'টেক্সট মেসেজ লিখুন',
-                      labelText: 'মেসেজ',
+                  SizedBox(
+                    height: 200,
+                    child: TextFormField(
+                      autovalidateMode: AutovalidateMode.always,
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.sms),
+                        hintText: 'টেক্সট মেসেজ লিখুন',
+                        labelText: 'মেসেজ',
+                      ),
+                      onSaved: (value) {},
+                      validator: (value) {},
                     ),
-                    onSaved: (value) {},
-                    validator: (value) {},
                   ),
                   Text(parseddata),
                 ],
