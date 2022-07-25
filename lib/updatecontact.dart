@@ -22,7 +22,7 @@ class _UpdateContactState extends State<UpdateContact> {
   final TextEditingController _controllerName = TextEditingController();
   final TextEditingController _controllerContactNumber =
       TextEditingController();
-  String? name, contactnumber;
+  late String name = widget.name, contactnumber;
   late ContactModel newContact;
   final ContactHelper _contactHelper = ContactHelper();
 
