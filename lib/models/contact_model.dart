@@ -25,7 +25,7 @@ class ContactModel {
 }
 
 class ContactHelper {
-  Database? db;
+  late Database db;
 
   ContactHelper() {
     initDatabase();
@@ -49,15 +49,16 @@ class ContactHelper {
 
   Future<void> insertContact(ContactModel exam) async {
     try {
-      db?.insert(tableName, exam.toMap(),
+      db.insert(tableName, exam.toMap(),
           conflictAlgorithm: ConflictAlgorithm.replace);
+      print("Kaaj e porjonto");
     } catch (_) {
-      // print(_);
+      print(_);
     }
   }
 
   Future<List<ContactModel>> getAllContacts() async {
-    List<Map<String, dynamic>> contacts = await db!.query(tableName);
+    List<Map<String, dynamic>> contacts = await db.query(tableName);
     return List.generate(contacts.length, (i) {
       return ContactModel(
         id: contacts[i][columnId],

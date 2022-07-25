@@ -13,7 +13,7 @@ class ContactsList extends StatefulWidget {
 }
 
 class _ContactsListState extends State<ContactsList> {
-  ContactHelper? _contactHelper;
+  final ContactHelper _contactHelper = ContactHelper();
   List<ContactModel> contacts = [];
   late bool isLoading;
 
@@ -52,8 +52,7 @@ class _ContactsListState extends State<ContactsList> {
                         return Card(
                           child: ListTile(
                             title: Text(contacts[index].name),
-                            subtitle:
-                                Text('- ' + contacts[index].contactnumber),
+                            subtitle: Text(contacts[index].contactnumber),
                             trailing: IconButton(
                               onPressed: () {
                                 // EDIT ER KAAJ
@@ -61,8 +60,7 @@ class _ContactsListState extends State<ContactsList> {
                               icon: const Icon(Icons.edit),
                             ),
                           ),
-                          margin: const EdgeInsets.only(
-                              top: 5, right: 10, bottom: 5, left: 10),
+                          margin: const EdgeInsets.only(right: 0, bottom: 5),
                           elevation: 2,
                         );
                       },
@@ -89,10 +87,11 @@ class _ContactsListState extends State<ContactsList> {
 
   _loadDB() async {
     await Future.delayed(const Duration(seconds: 1)); // THIS LITLE LINE!!!
-    var newquestions = await _contactHelper?.getAllContacts();
+    var newcontacts = await _contactHelper.getAllContacts();
     setState(() {
-      contacts = newquestions!.reversed.toList();
+      contacts = newcontacts.reversed.toList();
       isLoading = false;
     });
+    print(contacts.length);
   }
 }

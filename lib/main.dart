@@ -11,6 +11,8 @@ void main() async {
     return db.execute(
         "CREATE TABLE contacts(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, contactnumber TEXT)");
   }, version: 1);
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

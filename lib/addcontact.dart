@@ -102,18 +102,13 @@ class _AddContactState extends State<AddContact> {
     );
   }
 
-  void _addContact() {
-    if (name!.isEmpty) {
-      setState(() => name = 'At Least 1 Person or Message Required');
-    } else if (contactnumber!.isEmpty) {
-      setState(() => name = 'At Least 1 Person or Message Required');
-    } else {
-      newContact = ContactModel(
-          id: 1,
-          name: name.toString(),
-          contactnumber: contactnumber.toString());
-      var _result = _contactHelper.insertContact(newContact);
-      print(_result);
-    }
+  void _addContact() async {
+    newContact = ContactModel(
+      id: 1,
+      name: name.toString(),
+      contactnumber: contactnumber.toString(),
+    );
+    await _contactHelper.insertContact(newContact);
+    // print(_result);
   }
 }
