@@ -35,17 +35,17 @@ class _ContactsListState extends State<ContactsList> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
           ),
-          title: const Text('Contact List'),
+          title: Text('Contact List'),
         ),
         body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Card(
+              Card(
                 child: ListTile(
                   title: Text(totalcontacts.toString()),
                 ),
-                margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+                margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
               ),
               contacts.isNotEmpty
                   ? ListView.builder(
