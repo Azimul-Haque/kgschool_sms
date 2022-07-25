@@ -41,7 +41,7 @@ class _AddContactState extends State<AddContact> {
           children: <Widget>[
             ListTile(
               leading: const Icon(Icons.person),
-              title: TextField(
+              title: TextFormField(
                 controller: _controllerName,
                 decoration: const InputDecoration(labelText: 'Name'),
                 keyboardType: TextInputType.text,
@@ -51,7 +51,7 @@ class _AddContactState extends State<AddContact> {
             const Divider(),
             ListTile(
               leading: const Icon(Icons.phone),
-              title: TextField(
+              title: TextFormField(
                 decoration: const InputDecoration(labelText: 'Mobile Number'),
                 controller: _controllerContactNumber,
                 keyboardType: TextInputType.number,
