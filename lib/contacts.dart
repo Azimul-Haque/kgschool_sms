@@ -112,7 +112,7 @@ class _ContactsListState extends State<ContactsList> {
     // print(contacts.length);
   }
 
-  refresh() {
+  void refresh() {
     _loadContacts();
   }
 }
