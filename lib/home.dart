@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               // UPLOAD XLXS
               ExcelToJson().convert().then((onValue) {
-                print(jsonEncode(onValue).length);
+                print(jsonDecode(onValue).length);
                 setState(() {
                   parseddata = onValue!;
                 });
