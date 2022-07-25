@@ -40,7 +40,7 @@ class _ContactsListState extends State<ContactsList> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Card(
+              const Card(
                 child: ListTile(
                   title: Text('মোট নাম্বারঃ '),
                 ),
