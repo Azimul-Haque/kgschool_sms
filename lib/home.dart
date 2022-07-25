@@ -184,23 +184,19 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   const Divider(),
-                  Padding(
-                    padding: const EdgeInsets.all(0),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.resolveWith(
-                            (states) =>
-                                Theme.of(context).colorScheme.secondary),
-                        padding: MaterialStateProperty.resolveWith((states) =>
-                            const EdgeInsets.symmetric(vertical: 16)),
-                      ),
-                      onPressed: () {
-                        // if (_formKey.currentState!.validate()) {
-                        //   _updateContact();
-                        // }
-                      },
-                      child: const Text('মেসেজ পাঠান'),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith(
+                          (states) => Theme.of(context).colorScheme.secondary),
+                      padding: MaterialStateProperty.resolveWith(
+                          (states) => const EdgeInsets.symmetric(vertical: 16)),
                     ),
+                    onPressed: () {
+                      // if (_formKey.currentState!.validate()) {
+                      //   _updateContact();
+                      // }
+                    },
+                    child: const Text('মেসেজ পাঠান'),
                   ),
                   Text(parseddata),
                 ],
