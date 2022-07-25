@@ -168,6 +168,8 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 500.0,
                     child: TextFormField(
+                      toolbarOptions:
+                          const ToolbarOptions(copy: true, paste: true),
                       autovalidateMode: AutovalidateMode.always,
                       decoration: const InputDecoration(
                         icon: Icon(Icons.sms),
