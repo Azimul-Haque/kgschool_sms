@@ -15,7 +15,7 @@ class ContactsList extends StatefulWidget {
 class _ContactsListState extends State<ContactsList> {
   late ContactHelper _contactHelper;
   List<ContactModel> contacts = [];
-  bool isLoading;
+  late bool isLoading;
 
   @override
   void initState() {
