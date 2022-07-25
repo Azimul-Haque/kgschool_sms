@@ -38,56 +38,58 @@ class _AddContactState extends State<AddContact> {
           ),
           title: const Text('Add Contact'),
         ),
-        body: ListView(
-          children: <Widget>[
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: TextFormField(
-                controller: _controllerName,
-                decoration: const InputDecoration(labelText: 'Name'),
-                keyboardType: TextInputType.text,
-                onChanged: (String value) => setState(() {}),
-                validator: (text) {
-                  if (text == null || text.isEmpty) {
-                    return 'Text is empty';
-                  }
-                  return null;
-                },
-              ),
-            ),
-            const Divider(),
-            ListTile(
-              leading: const Icon(Icons.phone),
-              title: TextFormField(
-                decoration: const InputDecoration(labelText: 'Mobile Number'),
-                controller: _controllerContactNumber,
-                keyboardType: TextInputType.number,
-                onChanged: (String value) => setState(() {}),
-                validator: (text) {
-                  if (text == null || text.isEmpty) {
-                    return 'Text is empty';
-                  }
-                  return null;
-                },
-              ),
-            ),
-            const Divider(),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith(
-                      (states) => Theme.of(context).colorScheme.secondary),
-                  padding: MaterialStateProperty.resolveWith(
-                      (states) => const EdgeInsets.symmetric(vertical: 16)),
+        body: Form(
+          child: ListView(
+            children: <Widget>[
+              ListTile(
+                leading: const Icon(Icons.person),
+                title: TextFormField(
+                  controller: _controllerName,
+                  decoration: const InputDecoration(labelText: 'Name'),
+                  keyboardType: TextInputType.text,
+                  onChanged: (String value) => setState(() {}),
+                  validator: (text) {
+                    if (text == null || text.isEmpty) {
+                      return 'Text is empty';
+                    }
+                    return null;
+                  },
                 ),
-                onPressed: () {
-                  _addContact();
-                },
-                child: const Text('Add Contact'),
               ),
-            ),
-          ],
+              const Divider(),
+              ListTile(
+                leading: const Icon(Icons.phone),
+                title: TextFormField(
+                  decoration: const InputDecoration(labelText: 'Mobile Number'),
+                  controller: _controllerContactNumber,
+                  keyboardType: TextInputType.number,
+                  onChanged: (String value) => setState(() {}),
+                  validator: (text) {
+                    if (text == null || text.isEmpty) {
+                      return 'Text is empty';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              const Divider(),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.resolveWith(
+                        (states) => Theme.of(context).colorScheme.secondary),
+                    padding: MaterialStateProperty.resolveWith(
+                        (states) => const EdgeInsets.symmetric(vertical: 16)),
+                  ),
+                  onPressed: () {
+                    _addContact();
+                  },
+                  child: const Text('Add Contact'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
