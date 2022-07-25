@@ -66,8 +66,7 @@ class _ContactsListState extends State<ContactsList> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          UpdateContact(contacts[index])),
+                                      builder: (context) => UpdateContact()),
                                 );
                               },
                               icon: const Icon(Icons.edit),
