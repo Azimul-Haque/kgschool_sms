@@ -39,6 +39,7 @@ class _AddContactState extends State<AddContact> {
           title: const Text('Add Contact'),
         ),
         body: Form(
+          key: _formKey,
           child: ListView(
             children: <Widget>[
               ListTile(
