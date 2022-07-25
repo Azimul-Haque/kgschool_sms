@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:js';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +84,7 @@ class _HomePageState extends State<HomePage> {
               ExcelToJson().convert().then((onValue) {
                 // print(jsonEncode(onValue).length);
                 setState(() {
-                  parseddata = {'data': onValue} as String;
+                  parseddata = jsonEncode({'data': onValue});
                   // parseddata = onValue.split(",");
                   print(parseddata);
                 });
