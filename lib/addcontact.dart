@@ -63,7 +63,7 @@ class _AddContactState extends State<AddContact> {
             ),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.message),
+              leading: const Icon(Icons.phone),
               title: TextField(
                 decoration: const InputDecoration(labelText: 'Add Message'),
                 controller: _controllerContactNumber,
