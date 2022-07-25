@@ -49,10 +49,18 @@ class _ContactsListState extends State<ContactsList> {
                       scrollDirection: Axis.vertical,
                       itemCount: contacts.length,
                       itemBuilder: (context, index) {
-                        return _scrollCard(
-                            barmodeltests[index]["name"].toString(),
-                            barmodeltests[index]["exam_id"].toString(),
-                            screenwidth);
+                        return Card(
+                        child: ListTile(
+                          // leading: CircleAvatar(child: Text(questions[index].question[0]),),
+                          title: Text(questions[index].question),
+                          subtitle: Text('- ' + questions[index].answer),
+                          trailing: listPopUpMenu(questions[index]),
+                          // onTap: (){
+                          //   // Route route = MaterialPageRoute(builder: (context) => PageTwo(questions[index]));
+                          //   // Navigator.push(context, route);
+                          //   // _showSnackbar("তথ্য হালনাগাদ হয়েছে!");
+                          // },
+                        ),
                       },
                     )
                   : Center(
