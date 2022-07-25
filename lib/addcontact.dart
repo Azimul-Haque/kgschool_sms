@@ -111,7 +111,7 @@ class _AddContactState extends State<AddContact> {
   }
 
   void _addContact() {
-    if (people.isEmpty) {
+    if (name.isEmpty) {
       setState(() => name = 'At Least 1 Person or Message Required');
     } else {
       _sendSMS(people);
