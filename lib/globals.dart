@@ -12,7 +12,7 @@ showSimpleSnackBar(BuildContext context, String message) {
   );
 }
 
-Future<void> _showMyDialog() async {
+Future<void> _showMyDialog(BuildContext context) async {
   return showDialog<void>(
     context: context,
     barrierDismissible: false, // user must tap button!
