@@ -46,6 +46,12 @@ class _AddContactState extends State<AddContact> {
                 decoration: const InputDecoration(labelText: 'Name'),
                 keyboardType: TextInputType.text,
                 onChanged: (String value) => setState(() {}),
+                validator: (text) {
+                  if (text == null || text.isEmpty) {
+                    return 'Text is empty';
+                  }
+                  return null;
+                },
               ),
             ),
             const Divider(),
@@ -56,6 +62,12 @@ class _AddContactState extends State<AddContact> {
                 controller: _controllerContactNumber,
                 keyboardType: TextInputType.number,
                 onChanged: (String value) => setState(() {}),
+                validator: (text) {
+                  if (text == null || text.isEmpty) {
+                    return 'Text is empty';
+                  }
+                  return null;
+                },
               ),
             ),
             const Divider(),
