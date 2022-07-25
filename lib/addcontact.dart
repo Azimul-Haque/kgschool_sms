@@ -72,17 +72,6 @@ class _AddContactState extends State<AddContact> {
               ),
             ),
             const Divider(),
-            ListTile(
-              title: const Text('Can send SMS'),
-              subtitle: Text(_canSendSMSMessage),
-              trailing: IconButton(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                icon: const Icon(Icons.check),
-                onPressed: () {
-                  _canSendSMS();
-                },
-              ),
-            ),
             SwitchListTile(
                 title: const Text('Send Direct'),
                 subtitle: const Text(
