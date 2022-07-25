@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                     newContact = ContactModel(
                       id: 1,
                       name: name.toString(),
-                      contactnumber: contactnumber.toString(),
+                      contactnumber: item['contact_Numbers'].toString(),
                     );
                     await _contactHelper.insertContact(newContact);
                     showSimpleSnackBar(context, 'Added successfully!');
