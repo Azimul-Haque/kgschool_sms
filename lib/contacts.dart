@@ -114,8 +114,5 @@ class _ContactsListState extends State<ContactsList> {
 
   refresh() {
     _loadContacts();
-    setState(() {
-      //all the reload processes
-    });
   }
 }
