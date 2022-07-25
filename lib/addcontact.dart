@@ -64,6 +64,7 @@ class _AddContactState extends State<AddContact> {
                   decoration: const InputDecoration(labelText: 'Mobile Number'),
                   controller: _controllerContactNumber,
                   keyboardType: TextInputType.number,
+                  maxLength: 11,
                   onChanged: (String value) => setState(() {}),
                   validator: (text) {
                     if (text == null || text.isEmpty) {
