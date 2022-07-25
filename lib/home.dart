@@ -168,6 +168,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 300.0,
                     child: TextFormField(
+                      maxLength: 200,
                       toolbarOptions:
                           const ToolbarOptions(copy: true, paste: true),
                       minLines: 3,
