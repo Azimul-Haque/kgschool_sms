@@ -4,7 +4,7 @@ import 'dart:async';
 
 const String tableName = "contacts";
 const String columnId = "id";
-final String columnTotalQstn = "totalqstn";
+final String columnName = "name";
 final String columnDuration = "duration";
 final String columnRightAnswer = "rightanswer";
 final String columnWrongAnswer = "wronganswer";
