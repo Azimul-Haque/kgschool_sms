@@ -185,6 +185,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const Divider(),
                   Padding(
+                    padding: const EdgeInsets.all(0),
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.resolveWith(
