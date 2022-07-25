@@ -70,9 +70,9 @@ class ContactHelper {
 
   Future<void> updateContact(ContactModel contact) async {
     // Get a reference to the database.
-    final db = await database;
+    // final db = await database;
 
-    await db?.update(
+    await db.update(
       tableName,
       contact.toMap(),
       where: 'id = ?',
