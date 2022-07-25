@@ -112,7 +112,8 @@ class _AddContactState extends State<AddContact> {
           id: 1,
           name: name.toString(),
           contactnumber: contactnumber.toString());
-      _contactHelper.insertContact(newContact);
+      var _result = _contactHelper.insertContact(newContact);
+      print(_result);
     }
   }
 }
