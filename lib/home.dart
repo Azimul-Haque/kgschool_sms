@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   parseddata = jsonEncode(onValue);
                   // parseddata = onValue.split(",");
-                  var decodeddata = jsonDecode(parseddata);
+                  var decodeddata = onValue;
                   // print('${decodeddata.runtimeType} : $decodeddata');
                   print(decodeddata[0].toString());
                 });
