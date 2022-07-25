@@ -73,7 +73,7 @@ class ContactHelper {
     final db = await database;
 
     await db!.update(
-      'contacts',
+      tableName,
       contact.toMap(),
       where: 'id = ?',
       whereArgs: [contact.id],
