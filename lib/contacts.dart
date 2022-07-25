@@ -59,7 +59,7 @@ class _ContactsListState extends State<ContactsList> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 20.0,
                           ),
                           isLoading == true
