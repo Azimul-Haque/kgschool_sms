@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                   parseddata = jsonEncode({'contactdata': onValue});
                   // parseddata = onValue.split(",");
                   var decodeddata = jsonDecode(parseddata);
-                  print(decodeddata.toString());
+                  print(decodeddata.contactdata);
                 });
               });
             },
