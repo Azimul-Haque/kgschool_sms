@@ -40,13 +40,14 @@ class _ContactsListState extends State<ContactsList> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              barmodeltests.isNotEmpty
+              contacts.isNotEmpty
                   ? ListView.builder(
-                      padding: EdgeInsets.only(top: 10, left: 10, right: 10),
-                      physics: ClampingScrollPhysics(),
+                      padding:
+                          const EdgeInsets.only(top: 10, left: 10, right: 10),
+                      physics: const ClampingScrollPhysics(),
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
-                      itemCount: barmodeltests.length,
+                      itemCount: contacts.length,
                       itemBuilder: (context, index) {
                         return _scrollCard(
                             barmodeltests[index]["name"].toString(),
