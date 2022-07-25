@@ -93,8 +93,8 @@ class _HomePageState extends State<HomePage> {
                     print(item['contact_Numbers']);
                     newContact = ContactModel(
                       id: 1,
-                      name: name.toString(),
-                      contactnumber: item['contact_Numbers'].toString(),
+                      name: 'KG School ' + item['contact_Numbers'],
+                      contactnumber: item['contact_Numbers'],
                     );
                     await _contactHelper.insertContact(newContact);
                     showSimpleSnackBar(context, 'Added successfully!');
