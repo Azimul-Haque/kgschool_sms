@@ -109,7 +109,7 @@ class _UpdateContactState extends State<UpdateContact> {
       name: name.toString(),
       contactnumber: contactnumber.toString(),
     );
-    await _contactHelper.insertContact(newContact);
+    await _contactHelper.updateContact(newContact);
     showSimpleSnackBar(context, 'Added successfully!');
     Navigator.pop(context);
   }
