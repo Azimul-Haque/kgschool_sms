@@ -72,7 +72,9 @@ class _ContactsListState extends State<ContactsList> {
                                           contacts[index].name,
                                           contacts[index].contactnumber)),
                                 ).then((value) => () {
-                                      setState(() {});
+                                      setState(() {
+                                        _loadContacts();
+                                      });
                                     });
                               },
                               icon: const Icon(Icons.edit),
