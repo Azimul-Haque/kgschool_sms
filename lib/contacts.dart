@@ -16,6 +16,7 @@ class _ContactsListState extends State<ContactsList> {
   final ContactHelper _contactHelper = ContactHelper();
   List<ContactModel> contacts = [];
   late bool isLoading;
+  String totalcontacts = 0;
 
   @override
   void initState() {
