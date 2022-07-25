@@ -62,7 +62,8 @@ class _ContactsListState extends State<ContactsList> {
                             subtitle: Text(contacts[index].contactnumber),
                             trailing: IconButton(
                               onPressed: () {
-                                Navigator.push(context, UpdateContact(contact))
+                                Navigator.push(
+                                    context, UpdateContact(contacts[index]));
                               },
                               icon: const Icon(Icons.edit),
                             ),
