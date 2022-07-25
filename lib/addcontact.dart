@@ -56,8 +56,7 @@ class _AddContactState extends State<AddContact> {
               leading: const Icon(Icons.people),
               title: TextField(
                 controller: _controllerName,
-                decoration:
-                    const InputDecoration(labelText: 'Add Phone Number'),
+                decoration: const InputDecoration(labelText: 'Name'),
                 keyboardType: TextInputType.number,
                 onChanged: (String value) => setState(() {}),
               ),
