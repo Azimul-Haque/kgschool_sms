@@ -84,6 +84,7 @@ class _HomePageState extends State<HomePage> {
                 // print(jsonEncode(onValue).length);
                 setState(() {
                   parseddata = jsonEncode(onValue);
+                  print(parseddata.length);
                 });
               });
             },
