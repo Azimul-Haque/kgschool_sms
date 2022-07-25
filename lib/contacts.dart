@@ -212,8 +212,8 @@ class _ContactsListState extends State<ContactsList> {
               child: const Text('Delete'),
               onPressed: () {
                 _contactHelper.deleteContact(contactid);
-                showSimpleSnackBar(context, 'Deleted successfully');
                 Navigator.of(context).pop();
+                showSimpleSnackBar(context, 'Deleted successfully');
                 _loadContacts();
               },
             ),
