@@ -6,6 +6,8 @@ import 'package:kgschool_sms/globals.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 
 class UpdateContact extends StatefulWidget {
+  final List contact;
+  OTPScreen(this.phone);
   const UpdateContact({Key? key}) : super(key: key);
 
   @override
