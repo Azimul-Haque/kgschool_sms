@@ -32,9 +32,9 @@ class ContactHelper {
   }
 
   Future<Database> get database async {
-    if (null != database) {
-      return db;
-    }
+    // if (null != database) {
+    //   return db;
+    // }
     db = await initDatabase();
     return db;
   }
