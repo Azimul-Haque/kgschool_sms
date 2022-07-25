@@ -31,7 +31,7 @@ class ContactHelper {
     initDatabase();
   }
 
-  Future<Database> get database async {
+  Future<Database?> get database async {
     // if (null != database) {
     //   return db;
     // }
