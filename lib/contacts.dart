@@ -24,6 +24,9 @@ class _ContactsListState extends State<ContactsList> {
     super.initState();
     isLoading = true;
     _loadContacts();
+    if (refresh == true) {
+      _loadContacts();
+    }
   }
 
   @override
