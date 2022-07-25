@@ -95,7 +95,7 @@ class ContactHelper {
 
   deleteContactTable() async {
     // final db = await database;
-    db.rawDelete("Delete * from option");
+    db.rawDelete("Delete * from " + tableName);
   }
 
   // Future<List<ContactModel>> getSomeQuestions (String amount) async{
