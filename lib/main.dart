@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'KG School SMS 1.0',
+      title: 'KG School SMS',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
