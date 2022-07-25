@@ -25,11 +25,11 @@ class ContactModel {
 }
 
 class ContactHelper {
-  Database db;
+  late Database db;
 
-  // ContactHelper() {
-  //   initDatabase();
-  // }
+  ContactHelper() {
+    initDatabase();
+  }
 
   Future<Database> get database async {
     // if (null != database) {
@@ -40,7 +40,7 @@ class ContactHelper {
   }
 
   initDatabase() async {
-    db = await openDatabase(join(await getDatabasesPath(), "exams.db"),
+    db = await openDatabase(join(await getDatabasesPath(), "contacts.db"),
         onCreate: (db, version) {
       return db.execute(
           "CREATE TABLE $tableName($columnId INTEGER PRIMARY KEY AUTOINCREMENT, $columnTotalQstn INTEGER, $columnDuration INTEGER, $columnRightAnswer INTEGER, $columnWrongAnswer INTEGER, $columnCreatedAt TEXT)");
