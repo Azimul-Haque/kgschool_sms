@@ -36,10 +36,10 @@ class _HomePageState extends State<HomePage> {
     var newcontacts = await _contactHelper.getAllContacts();
     setState(() {
       contacts = newcontacts.reversed.toList();
+      for (var item in contacts) {
+        recipients.add(item.contactnumber);
+      }
     });
-    for (var item in contacts) {
-      recipients.add(item.contactnumber);
-    }
   }
 
   void _sendSMS() async {
