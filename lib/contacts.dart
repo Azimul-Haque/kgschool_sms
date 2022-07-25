@@ -49,4 +49,16 @@ class _ContactsListState extends State<ContactsList> {
       ),
     );
   }
+
+  _loadDB() async {
+    await Future.delayed(Duration(seconds: 1)); // THIS LITLE LINE!!!
+    var newquestions = await _questionHelper.getAllQuestion();
+    setState(() {
+      questions = newquestions.reversed.toList();
+      isLoading = false;
+    });
+    if (questions.length == 0) {
+      _getSynced(questions.length);
+    }
+  }
 }
