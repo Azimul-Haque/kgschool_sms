@@ -16,7 +16,7 @@ class _ContactsListState extends State<ContactsList> {
   final ContactHelper _contactHelper = ContactHelper();
   List<ContactModel> contacts = [];
   late bool isLoading;
-  int totalcontacts = 0;
+  late int totalcontacts = 0;
 
   @override
   void initState() {
@@ -43,7 +43,7 @@ class _ContactsListState extends State<ContactsList> {
             children: [
               const Card(
                 child: ListTile(
-                  title: Text('মোট নাম্বারঃ ' + const totalcontacts.toString()),
+                  title: Text('মোট নাম্বারঃ ' + totalcontacts.toString()),
                 ),
                 margin: EdgeInsets.only(top: 10, left: 10, right: 10),
               ),
