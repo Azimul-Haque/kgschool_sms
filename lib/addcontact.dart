@@ -82,7 +82,7 @@ class _AddContactState extends State<AddContact> {
                       (states) => const EdgeInsets.symmetric(vertical: 16)),
                 ),
                 onPressed: () {
-                  _send();
+                  _addContact();
                 },
                 child: const Text('Add Contact'),
               ),
@@ -110,7 +110,7 @@ class _AddContactState extends State<AddContact> {
     );
   }
 
-  void _send() {
+  void _addContact() {
     if (people.isEmpty) {
       setState(() => name = 'At Least 1 Person or Message Required');
     } else {
