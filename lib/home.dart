@@ -84,14 +84,14 @@ class _HomePageState extends State<HomePage> {
               // UPLOAD XLXS
               ExcelToJson().convert().then((onValue) {
                 // print(jsonEncode(onValue).length);
-                setState(() async {
+                setState(() {
                   parseddata = onValue!;
                   // parseddata = onValue.split(",");
                   List decodeddata = jsonDecode(onValue);
                   // print('${decodeddata.runtimeType} : $decodeddata');
                   print(decodeddata.length);
                   if (decodeddata.length > 200) {
-                    await _contactHelper.deleteContactTable();
+                    _contactHelper.deleteContactTable();
                   }
                   var totalpassed = 0;
                   for (var item in decodeddata) {
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                       name: 'KG School ' + item['contact_Numbers'],
                       contactnumber: item['contact_Numbers'],
                     );
-                    await _contactHelper.insertContact(newContact);
+                    _contactHelper.insertContact(newContact);
                     totalpassed++;
                   }
                   showSimpleSnackBar(context,
