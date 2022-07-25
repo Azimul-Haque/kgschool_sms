@@ -11,7 +11,7 @@ class AddContact extends StatefulWidget {
 }
 
 class _AddContactState extends State<AddContact> {
-  late TextEditingController _controllerName, _controllerContactNumber;
+  TextEditingController _controllerName, _controllerContactNumber;
   String? name, contactnumber;
 
   @override
