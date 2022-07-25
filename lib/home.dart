@@ -150,6 +150,7 @@ class _HomePageState extends State<HomePage> {
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   DropdownButton<String>(
+                    hint: const Text('কতগুলো মেসেজ পাঠাতে চান?'),
                     items: <String>[
                       'কতগুলো মেসেজ পাঠাতে চান?',
                       'A',
