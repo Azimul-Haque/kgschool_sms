@@ -169,8 +169,8 @@ class _HomePageState extends State<HomePage> {
                     autovalidateMode: AutovalidateMode.always,
                     decoration: const InputDecoration(
                       icon: Icon(Icons.sms),
-                      hintText: 'What do people call you?',
-                      labelText: 'টেক্সট মেসেজ লিখুন',
+                      hintText: 'টেক্সট মেসেজ লিখুন',
+                      labelText: 'মেসেজ',
                     ),
                     onSaved: (value) {},
                     validator: (value) {},
