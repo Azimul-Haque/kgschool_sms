@@ -43,7 +43,7 @@ class ContactHelper {
     db = await openDatabase(join(await getDatabasesPath(), "contacts.db"),
         onCreate: (db, version) {
       return db.execute(
-          "CREATE TABLE $tableName($columnId INTEGER PRIMARY KEY AUTOINCREMENT, $columnName TEXT, $columnDuration INTEGER, $columnRightAnswer INTEGER, $columnWrongAnswer INTEGER, $columnCreatedAt TEXT)");
+          "CREATE TABLE $tableName($columnId INTEGER PRIMARY KEY AUTOINCREMENT, $columnName TEXT, $columnContactNumber TEXT)");
     }, version: 1);
   }
 
