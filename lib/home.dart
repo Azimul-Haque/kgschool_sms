@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kgschool_sms/addcontact.dart';
+import 'package:kgschool_sms/contacts.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,24 +26,63 @@ class _HomePageState extends State<HomePage> {
     await Permission.sms.request();
   }
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _sendSMS() async {
+    String message = "This is a test message 654654!";
+    List<String> recipients = ["01837409842", "01751398392"];
+
+    for (var i = 0; i < recipients.length; i++) {
+      String _result = await sendSMS(
+              message: message, recipients: [recipients[i]], sendDirect: true)
+          .catchError((onError) {
+        print(onError);
+      });
+      if (_result == "SMS Sent!") {
+        setState(() {
+          _counter++;
+        });
+      }
+      print(_result);
+    }
   }
+  // void _incrementCounter() {
+  //   setState(() {
+  //     _counter++;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const Icon(Icons.message),
         title: const Text('KG School SMS'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ContactsList()),
+                );
+              },
+              icon:
+                  const Icon(CupertinoIcons.rectangle_stack_person_crop_fill)),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddContact()),
+              );
+            },
+            icon: const Icon(CupertinoIcons.person_add),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'SMS sent:',
             ),
             Text(
               '$_counter',
@@ -49,7 +92,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _sendSMS,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
