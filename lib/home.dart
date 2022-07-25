@@ -153,10 +153,8 @@ class _HomePageState extends State<HomePage> {
                     hint: const Text('কতগুলো মেসেজ পাঠাতে চান?'),
                     items: <String>[
                       'কতগুলো মেসেজ পাঠাতে চান?',
-                      'A',
-                      'B',
-                      'C',
-                      'D'
+                      'প্রথম ২৫০ টি নম্বরে',
+                      '২৫১ নম্বর থেকে পরবর্তী সকল নম্বরে'
                     ].map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
