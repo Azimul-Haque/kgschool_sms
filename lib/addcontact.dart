@@ -52,21 +52,6 @@ class _AddContactState extends State<AddContact> {
         ),
         body: ListView(
           children: <Widget>[
-            if (people.isEmpty)
-              const SizedBox(height: 0)
-            else
-              SizedBox(
-                height: 90,
-                child: Padding(
-                  padding: const EdgeInsets.all(3),
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: List<Widget>.generate(people.length, (int index) {
-                      return _phoneTile(people[index]);
-                    }),
-                  ),
-                ),
-              ),
             ListTile(
               leading: const Icon(Icons.people),
               title: TextField(
