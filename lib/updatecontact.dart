@@ -114,7 +114,7 @@ class _UpdateContactState extends State<UpdateContact> {
 
   void _updateContact() async {
     newContact = ContactModel(
-      id: 1,
+      id: widget.id,
       name: name.toString(),
       contactnumber: contactnumber.toString(),
     );
