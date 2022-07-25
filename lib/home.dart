@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kgschool_sms/addcontact.dart';
@@ -78,7 +80,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               // UPLOAD XLXS
               ExcelToJson().convert().then((onValue) {
-                print(onValue?.length.toString());
+                print(jsonEncode(onValue));
               });
             },
             icon: const Icon(CupertinoIcons.cloud_upload_fill),
