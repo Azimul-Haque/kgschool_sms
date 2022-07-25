@@ -105,6 +105,6 @@ class _ContactsListState extends State<ContactsList> {
       contacts = newcontacts.reversed.toList();
       isLoading = false;
     });
-    // print(contacts.length);
+    print(contacts.first);
   }
 }
