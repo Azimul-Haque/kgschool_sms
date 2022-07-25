@@ -40,6 +40,7 @@ class _ContactsListState extends State<ContactsList> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              Card(),
               contacts.isNotEmpty
                   ? ListView.builder(
                       padding:
