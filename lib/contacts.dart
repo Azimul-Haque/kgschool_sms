@@ -12,21 +12,11 @@ class ContactsList extends StatefulWidget {
 }
 
 class _ContactsListState extends State<ContactsList> {
-  late TextEditingController _controllerPeople, _controllerMessage;
-  String? _message, body;
-  String _canSendSMSMessage = 'Check is not run.';
   List<String> people = [];
-  bool sendDirect = false;
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-  }
-
-  Future<void> initPlatformState() async {
-    _controllerPeople = TextEditingController();
-    _controllerMessage = TextEditingController();
   }
 
   @override
