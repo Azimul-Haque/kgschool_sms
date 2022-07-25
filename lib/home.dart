@@ -168,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                   TextFormField(
                     autovalidateMode: AutovalidateMode.always,
                     decoration: const InputDecoration(
-                      icon: Icon(Icons.person),
+                      icon: Icon(Icons.sms),
                       hintText: 'What do people call you?',
                       labelText: 'Name *',
                     ),
