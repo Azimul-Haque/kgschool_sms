@@ -97,7 +97,7 @@ class ContactHelper {
     try {
       await db.rawDelete("Delete * from " + tableName);
     } catch (_) {
-      // print(_);
+      print(_);
     }
   }
 
