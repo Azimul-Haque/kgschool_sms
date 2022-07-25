@@ -58,14 +58,23 @@ class _HomePageState extends State<HomePage> {
         title: const Text('KG School SMS'),
         actions: [
           IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ContactsList()),
-                );
-              },
-              icon:
-                  const Icon(CupertinoIcons.rectangle_stack_person_crop_fill)),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ContactsList()),
+              );
+            },
+            icon: const Icon(CupertinoIcons.rectangle_stack_person_crop_fill),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ContactsList()),
+              );
+            },
+            icon: const Icon(CupertinoIcons.rectangle_stack_person_crop_fill),
+          ),
           IconButton(
             onPressed: () {
               Navigator.push(
