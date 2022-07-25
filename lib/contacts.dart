@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
@@ -53,12 +54,12 @@ class _ContactsListState extends State<ContactsList> {
                           child: ListTile(
                             title: Text(questions[index].question),
                             subtitle: Text('- ' + questions[index].answer),
-                            trailing: listPopUpMenu(questions[index]),
-                            // onTap: (){
-                            //   // Route route = MaterialPageRoute(builder: (context) => PageTwo(questions[index]));
-                            //   // Navigator.push(context, route);
-                            //   // _showSnackbar("তথ্য হালনাগাদ হয়েছে!");
-                            // },
+                            trailing: IconButton(
+                              onPressed: () {
+                                // UPLOAD XLXS
+                              },
+                              icon: const Icon(Icons.edit),
+                            ),
                           ),
                           margin: const EdgeInsets.only(
                               top: 5, right: 10, bottom: 5, left: 10),
