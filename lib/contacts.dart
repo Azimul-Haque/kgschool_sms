@@ -53,7 +53,7 @@ class _ContactsListState extends State<ContactsList> {
 
   _loadDB() async {
     await Future.delayed(Duration(seconds: 1)); // THIS LITLE LINE!!!
-    var newquestions = await _contactHelper.getAllQuestion();
+    var newquestions = await _contactHelper.getAllContacts();
     setState(() {
       questions = newquestions.reversed.toList();
       isLoading = false;
