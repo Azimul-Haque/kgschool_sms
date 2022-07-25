@@ -111,10 +111,7 @@ class _AddContactState extends State<AddContact> {
     } else if (contactnumber!.isEmpty) {
       setState(() => name = 'At Least 1 Person or Message Required');
     } else {
-      newContact = QuestionsModel(
-          question: element["question"],
-          answer: element["answer"],
-          incanswer: element["incanswer"]);
+      newContact = ContactModel(name: name, contactnumber: contactnumber);
       _questionHelper.insertQuestion(currentQuestion);
     }
   }
