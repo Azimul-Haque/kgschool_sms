@@ -35,13 +35,7 @@ class _ContactsListState extends State<ContactsList> {
           children: <Widget>[
             ListTile(
               leading: const Icon(Icons.people),
-              title: TextField(
-                controller: _controllerPeople,
-                decoration:
-                    const InputDecoration(labelText: 'Add Phone Number'),
-                keyboardType: TextInputType.number,
-                onChanged: (String value) => setState(() {}),
-              ),
+              title: Text('Contact Name'),
               trailing: IconButton(
                 icon: const Icon(Icons.edit),
                 onPressed: () {},
