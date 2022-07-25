@@ -93,7 +93,7 @@ class _AddContactState extends State<AddContact> {
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
           ),
-          title: const Text('SMS/MMS Example'),
+          title: const Text('Add Contact'),
         ),
         body: ListView(
           children: <Widget>[
