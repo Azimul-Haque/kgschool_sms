@@ -9,7 +9,8 @@ class UpdateContact extends StatefulWidget {
   final int id;
   final String name;
   final String contactnumber;
-  const UpdateContact(this.contact, {Key? key}) : super(key: key);
+  const UpdateContact(this.id, this.name, this.contactnumber, {Key? key})
+      : super(key: key);
   // const UpdateContact({Key? key}) : super(key: key);
 
   @override
