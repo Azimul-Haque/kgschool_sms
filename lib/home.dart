@@ -162,16 +162,4 @@ class _HomePageState extends State<HomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-
-  _loadContacts() async {
-    await Future.delayed(const Duration(seconds: 1)); // THIS LITLE LINE!!!
-    var newcontacts = await _contactHelper.getAllContacts();
-    setState(() {
-      contacts = newcontacts.reversed.toList();
-      adhoccontacts = newcontacts.reversed.toList();
-      isLoading = false;
-    });
-
-    // print(contacts.length);
-  }
 }
