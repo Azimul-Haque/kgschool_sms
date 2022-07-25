@@ -5,14 +5,14 @@ import 'package:flutter_sms/flutter_sms.dart';
 import 'package:kgschool_sms/globals.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 
-class AddContact extends StatefulWidget {
-  const AddContact({Key? key}) : super(key: key);
+class UpdateContact extends StatefulWidget {
+  const UpdateContact({Key? key}) : super(key: key);
 
   @override
-  _AddContactState createState() => _AddContactState();
+  _UpdateContactState createState() => _UpdateContactState();
 }
 
-class _AddContactState extends State<AddContact> {
+class _UpdateContactState extends State<UpdateContact> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _controllerName = TextEditingController();
   final TextEditingController _controllerContactNumber =
@@ -90,7 +90,7 @@ class _AddContactState extends State<AddContact> {
                   ),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      _addContact();
+                      _updateContact();
                     }
                   },
                   child: const Text('Add Contact'),
@@ -103,7 +103,7 @@ class _AddContactState extends State<AddContact> {
     );
   }
 
-  void _addContact() async {
+  void _updateContact() async {
     newContact = ContactModel(
       id: 1,
       name: name.toString(),
