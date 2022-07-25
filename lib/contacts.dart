@@ -51,7 +51,6 @@ class _ContactsListState extends State<ContactsList> {
                       itemBuilder: (context, index) {
                         return Card(
                           child: ListTile(
-                            // leading: CircleAvatar(child: Text(questions[index].question[0]),),
                             title: Text(questions[index].question),
                             subtitle: Text('- ' + questions[index].answer),
                             trailing: listPopUpMenu(questions[index]),
@@ -61,7 +60,7 @@ class _ContactsListState extends State<ContactsList> {
                             //   // _showSnackbar("তথ্য হালনাগাদ হয়েছে!");
                             // },
                           ),
-                          margin: EdgeInsets.only(
+                          margin: const EdgeInsets.only(
                               top: 5, right: 10, bottom: 5, left: 10),
                           elevation: 2,
                         );
