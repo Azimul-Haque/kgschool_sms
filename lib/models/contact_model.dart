@@ -12,7 +12,10 @@ class ContactModel {
   final String name;
   final String contactnumber;
 
-  ContactModel({id, name, contactnumber});
+  ContactModel(
+    this.name,
+    this.contactnumber,
+  );
 
   Map<String, dynamic> toMap() {
     return {
