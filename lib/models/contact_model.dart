@@ -4,8 +4,8 @@ import 'dart:async';
 
 const String tableName = "contacts";
 const String columnId = "id";
-final String columnName = "name";
-final String columnContactNumber = "contactnumber";
+const String columnName = "name";
+const String columnContactNumber = "contactnumber";
 
 class ContactModel {
   int id;
@@ -65,7 +65,9 @@ class ContactHelper {
           duration: exams[i][columnDuration],
           rightanswer: exams[i][columnRightAnswer],
           wronganswer: exams[i][columnWrongAnswer],
-          createdat: exams[i][columnCreatedAt]);
+          createdat: exams[i][columnCreatedAt],
+          contactnumber: '',
+          name: '');
     });
   }
 
