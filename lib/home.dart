@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                   // print('${decodeddata.runtimeType} : $decodeddata');
                   print(decodeddata.length);
                   for (var item in decodeddata) {
-                    print(item.contact_Numbers);
+                    print(item['contact_Numbers']);
                   }
                 });
               });
