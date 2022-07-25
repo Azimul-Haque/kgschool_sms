@@ -84,10 +84,8 @@ class ContactHelper {
 
   Future<void> deleteContact(int id) async {
     await db.delete(
-      'dogs',
-      // Use a `where` clause to delete a specific dog.
+      tableName,
       where: 'id = ?',
-      // Pass the Dog's id as a whereArg to prevent SQL injection.
       whereArgs: [id],
     );
   }
