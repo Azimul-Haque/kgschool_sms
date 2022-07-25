@@ -72,7 +72,7 @@ class ContactHelper {
     // Get a reference to the database.
     final db = await database;
 
-    await db.update(
+    await db?.update(
       tableName,
       contact.toMap(),
       where: 'id = ?',
