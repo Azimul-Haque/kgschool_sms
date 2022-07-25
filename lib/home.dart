@@ -116,6 +116,9 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  const SizedBox(
+                    height: 10.0,
+                  ),
                   Text(parseddata),
                   const Text(
                     'SMS sent:',
