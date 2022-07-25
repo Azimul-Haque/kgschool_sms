@@ -7,12 +7,12 @@ const String columnId = "id";
 final String columnName = "name";
 final String columnContactNumber = "contactnumber";
 
-class ExamModel {
+class ContactModel {
   int id;
   final String name;
   final String contactnumber;
 
-  ExamModel(
+  ContactModel(
       {this.id,
       this.totalqstn,
       this.duration,
@@ -55,7 +55,7 @@ class ExamHelper {
     }, version: 1);
   }
 
-  Future<void> insertExam(ExamModel exam) async {
+  Future<void> insertExam(ContactModel exam) async {
     try {
       db.insert(tableName, exam.toMap(),
           conflictAlgorithm: ConflictAlgorithm.replace);
@@ -64,10 +64,10 @@ class ExamHelper {
     }
   }
 
-  Future<List<ExamModel>> getAllExams() async {
+  Future<List<ContactModel>> getAllExams() async {
     List<Map<String, dynamic>> exams = await db.query(tableName);
     return List.generate(exams.length, (i) {
-      return ExamModel(
+      return ContactModel(
           id: exams[i][columnId],
           totalqstn: exams[i][columnTotalQstn],
           duration: exams[i][columnDuration],
@@ -77,10 +77,10 @@ class ExamHelper {
     });
   }
 
-  // Future<List<ExamModel>> getSomeQuestions (String amount) async{
+  // Future<List<ContactModel>> getSomeQuestions (String amount) async{
   //   List<Map<String, dynamic>> questions = await db.rawQuery("SELECT * FROM " + tableName + " ORDER BY RANDOM() LIMIT " + amount, null);
   //   return List.generate(questions.length, (i){
-  //     return ExamModel(id: questions[i][columnId], question: questions[i][columnQuestion], answer: questions[i][columnAnswer], incanswer: questions[i][columnIncAnswers]);
+  //     return ContactModel(id: questions[i][columnId], question: questions[i][columnQuestion], answer: questions[i][columnAnswer], incanswer: questions[i][columnIncAnswers]);
   //   });
   // }
 }
