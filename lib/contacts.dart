@@ -36,18 +36,39 @@ class _ContactsListState extends State<ContactsList> {
           ),
           title: const Text('Contact List'),
         ),
-        body: ListView(
-          children: <Widget>[
-            ListTile(
-              leading: const Icon(Icons.people),
-              title: const Text('Contact Name'),
-              trailing: IconButton(
-                icon: const Icon(Icons.edit),
-                onPressed: () {},
-              ),
-            ),
-            const Divider(),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              barmodeltests.isNotEmpty
+                  ? ListView.builder(
+                      padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+                      physics: ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      itemCount: barmodeltests.length,
+                      itemBuilder: (context, index) {
+                        return _scrollCard(
+                            barmodeltests[index]["name"].toString(),
+                            barmodeltests[index]["exam_id"].toString(),
+                            screenwidth);
+                      },
+                    )
+                  : Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          _showCircle == true
+                              ? CircularProgressIndicator()
+                              : Text("কোন নতুন পরীক্ষা নেই!"),
+                        ],
+                      ),
+                    ),
+            ],
+          ),
         ),
       ),
     );
