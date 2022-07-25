@@ -68,8 +68,8 @@ class _ContactsListState extends State<ContactsList> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => UpdateContact(
-                                          contacts[index].contactnumber,
-                                          contacts[index].contactnumber,
+                                          contacts[index].id,
+                                          contacts[index].name,
                                           contacts[index].contactnumber)),
                                 );
                               },
