@@ -91,6 +91,13 @@ class _HomePageState extends State<HomePage> {
                   // print(decodeddata.length);
                   for (var item in decodeddata) {
                     print(item['contact_Numbers']);
+                    newContact = ContactModel(
+                      id: 1,
+                      name: name.toString(),
+                      contactnumber: contactnumber.toString(),
+                    );
+                    await _contactHelper.insertContact(newContact);
+                    showSimpleSnackBar(context, 'Added successfully!');
                   }
                 });
               });
