@@ -206,7 +206,7 @@ class _ContactsListState extends State<ContactsList> {
           ),
           actions: <Widget>[
             TextButton(
-              child: const Text('Approve'),
+              child: const Text('Delete'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
