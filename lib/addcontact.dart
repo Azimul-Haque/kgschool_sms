@@ -12,10 +12,7 @@ class AddContact extends StatefulWidget {
 
 class _AddContactState extends State<AddContact> {
   late TextEditingController _controllerName, _controllerContactNumber;
-  String? _message, body;
-  String _canSendSMSMessage = 'Check is not run.';
-  List<String> people = [];
-  bool sendDirect = false;
+  String? name, contactnumber;
 
   @override
   void initState() {
@@ -35,9 +32,9 @@ class _AddContactState extends State<AddContact> {
         recipients: recipients,
         sendDirect: sendDirect,
       );
-      setState(() => _message = _result);
+      setState(() => name = _result);
     } catch (error) {
-      setState(() => _message = error.toString());
+      setState(() => name = error.toString());
     }
   }
 
@@ -178,7 +175,7 @@ class _AddContactState extends State<AddContact> {
               ),
             ),
             Visibility(
-              visible: _message != null,
+              visible: name != null,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -186,7 +183,7 @@ class _AddContactState extends State<AddContact> {
                     child: Padding(
                       padding: const EdgeInsets.all(12),
                       child: Text(
-                        _message ?? 'No Data',
+                        name ?? 'No Data',
                         maxLines: null,
                       ),
                     ),
@@ -202,7 +199,7 @@ class _AddContactState extends State<AddContact> {
 
   void _send() {
     if (people.isEmpty) {
-      setState(() => _message = 'At Least 1 Person or Message Required');
+      setState(() => name = 'At Least 1 Person or Message Required');
     } else {
       _sendSMS(people);
     }
