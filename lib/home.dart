@@ -82,6 +82,9 @@ class _HomePageState extends State<HomePage> {
               // UPLOAD XLXS
               ExcelToJson().convert().then((onValue) {
                 print(jsonEncode(onValue).length);
+                setState(() {
+                  parseddata = jsonEncode(onValue);
+                });
               });
             },
             icon: const Icon(CupertinoIcons.cloud_upload_fill),
