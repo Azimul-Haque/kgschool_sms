@@ -20,6 +20,7 @@ class _ContactsListState extends State<ContactsList> {
   @override
   void initState() {
     super.initState();
+    isLoading = true;
     _loadDB();
   }
 
@@ -59,7 +60,7 @@ class _ContactsListState extends State<ContactsList> {
       contacts = newquestions.reversed.toList();
       isLoading = false;
     });
-    if (questions.length == 0) {
+    if (contacts.length == 0) {
       _getSynced(questions.length);
     }
   }
