@@ -47,7 +47,7 @@ class ContactHelper {
     }, version: 1);
   }
 
-  Future<void> insertExam(ContactModel exam) async {
+  Future<void> insertContact(ContactModel exam) async {
     try {
       db.insert(tableName, exam.toMap(),
           conflictAlgorithm: ConflictAlgorithm.replace);
