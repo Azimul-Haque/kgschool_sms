@@ -14,6 +14,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final ContactHelper _contactHelper = ContactHelper();
+  List<ContactModel> contacts = [];
   int _counter = 0;
 
   @override
