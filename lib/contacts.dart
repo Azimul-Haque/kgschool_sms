@@ -70,7 +70,8 @@ class _ContactsListState extends State<ContactsList> {
                                       builder: (context) => UpdateContact(
                                           contacts[index].id,
                                           contacts[index].name,
-                                          contacts[index].contactnumber)),
+                                          contacts[index].contactnumber,
+                                          refresh())),
                                 ).then((value) => () {
                                       setState(() {
                                         refresh = true;
