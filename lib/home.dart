@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
       contacts = newcontacts.reversed.toList();
     });
     for (var item in contacts) {
-      recipients.item.contactnumber;
+      recipients.add(item.contactnumber);
     }
   }
 
