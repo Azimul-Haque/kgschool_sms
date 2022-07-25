@@ -11,6 +11,7 @@ class AddContact extends StatefulWidget {
 }
 
 class _AddContactState extends State<AddContact> {
+  final _formKey = GlobalKey<FormState>();
   late TextEditingController _controllerName, _controllerContactNumber;
   String? name, contactnumber;
 
