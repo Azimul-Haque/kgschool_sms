@@ -60,8 +60,5 @@ class _ContactsListState extends State<ContactsList> {
       contacts = newquestions.reversed.toList();
       isLoading = false;
     });
-    if (contacts.length == 0) {
-      _getSynced(questions.length);
-    }
   }
 }
