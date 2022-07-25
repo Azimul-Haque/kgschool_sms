@@ -83,11 +83,16 @@ class ContactHelper {
   }
 
   Future<void> deleteContact(int id) async {
-    await db.delete(
-      tableName,
-      where: 'id = ?',
-      whereArgs: [id],
-    );
+    try {
+      await db.delete(
+        tableName,
+        where: 'id = ?',
+        whereArgs: [id],
+      );
+      print('kaaj hoy to');
+    } catch (_) {
+      print(_);
+    }
   }
 
   // Future<List<ContactModel>> getSomeQuestions (String amount) async{
