@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:kgschool_sms/globals.dart';
 // import 'package:flutter_sms/flutter_sms.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 import 'package:kgschool_sms/updatecontact.dart';
