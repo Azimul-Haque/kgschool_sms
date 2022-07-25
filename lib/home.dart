@@ -185,10 +185,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const Divider(),
                   ElevatedButton(
-                    style: ButtonStyle(
-                      padding: MaterialStateProperty.resolveWith(
-                          (states) => const EdgeInsets.symmetric(vertical: 16)),
-                    ),
+                    style: ButtonStyle(),
                     onPressed: () {
                       // if (_formKey.currentState!.validate()) {
                       //   _updateContact();
