@@ -38,41 +38,6 @@ class _AddContactState extends State<AddContact> {
     }
   }
 
-  Widget _phoneTile(String name) {
-    return Padding(
-      padding: const EdgeInsets.all(3),
-      child: Container(
-          decoration: BoxDecoration(
-              border: Border(
-            bottom: BorderSide(color: Colors.grey.shade300),
-            top: BorderSide(color: Colors.grey.shade300),
-            left: BorderSide(color: Colors.grey.shade300),
-            right: BorderSide(color: Colors.grey.shade300),
-          )),
-          child: Padding(
-            padding: const EdgeInsets.all(4),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                IconButton(
-                  icon: const Icon(Icons.close),
-                  onPressed: () => setState(() => people.remove(name)),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(0),
-                  child: Text(
-                    name,
-                    textScaleFactor: 1,
-                    style: const TextStyle(fontSize: 12),
-                  ),
-                )
-              ],
-            ),
-          )),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
