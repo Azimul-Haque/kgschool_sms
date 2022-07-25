@@ -43,13 +43,8 @@ class _ContactsListState extends State<ContactsList> {
                 onChanged: (String value) => setState(() {}),
               ),
               trailing: IconButton(
-                icon: const Icon(Icons.add),
-                onPressed: _controllerPeople.text.isEmpty
-                    ? null
-                    : () => setState(() {
-                          people.add(_controllerPeople.text.toString());
-                          _controllerPeople.clear();
-                        }),
+                icon: const Icon(Icons.edit),
+                onPressed: () {},
               ),
             ),
             const Divider(),
