@@ -6,8 +6,8 @@ import 'package:kgschool_sms/globals.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 
 class UpdateContact extends StatefulWidget {
-  final int contactid;
-  const UpdateContact(this.contactid, {Key? key}) : super(key: key);
+  final List contact;
+  const UpdateContact(this.contact, {Key? key}) : super(key: key);
   // const UpdateContact({Key? key}) : super(key: key);
 
   @override
