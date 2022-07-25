@@ -68,14 +68,14 @@ class ContactHelper {
     }
   }
 
-  Future<void> updateContact(ContactModel dog) async {
+  Future<void> updateContact(ContactModel contact) async {
     // Get a reference to the database.
     final db = await database;
 
     // Update the given Dog.
     await db.update(
       'dogs',
-      dog.toMap(),
+      contact.toMap(),
       // Ensure that the Dog has a matching id.
       where: 'id = ?',
       // Pass the Dog's id as a whereArg to prevent SQL injection.
