@@ -16,6 +16,7 @@ class _AddContactState extends State<AddContact> {
   late TextEditingController _controllerName, _controllerContactNumber;
   String? name, contactnumber;
   late ContactModel newContact;
+  late ContactHelper _contactHelper;
 
   @override
   void initState() {
