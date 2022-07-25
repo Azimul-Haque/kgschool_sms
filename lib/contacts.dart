@@ -198,13 +198,7 @@ class _ContactsListState extends State<ContactsList> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Delete Contact'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: const <Widget>[
-                Text('This is a demo alert dialog.'),
-              ],
-            ),
-          ),
+          content: const Text('This is a demo alert dialog.'),
           actions: <Widget>[
             TextButton(
               child: const Text('Cancel'),
