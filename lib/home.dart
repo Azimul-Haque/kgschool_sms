@@ -150,7 +150,13 @@ class _HomePageState extends State<HomePage> {
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   DropdownButton<String>(
-                    items: <String>['A', 'B', 'C', 'D'].map((String value) {
+                    items: <String>[
+                      'কতগুলো মেসেজ পাঠাতে চান?',
+                      'A',
+                      'B',
+                      'C',
+                      'D'
+                    ].map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(value),
