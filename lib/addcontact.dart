@@ -67,7 +67,9 @@ class _AddContactState extends State<AddContact> {
                   controller: _controllerContactNumber,
                   keyboardType: TextInputType.number,
                   maxLength: 11,
-                  onChanged: (String value) => setState(() {}),
+                  onChanged: (String value) => setState(() {
+                    contactnumber = value;
+                  }),
                   validator: (text) {
                     if (text == null || text.isEmpty) {
                       return 'Mobile Number is empty';
