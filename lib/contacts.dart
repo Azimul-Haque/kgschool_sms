@@ -43,7 +43,7 @@ class _ContactsListState extends State<ContactsList> {
             children: [
               const Card(
                 child: ListTile(
-                  title: Text('মোট নাম্বারঃ '),
+                  title: Text('মোট নাম্বারঃ ' + totalcontacts.toString()),
                 ),
                 margin: EdgeInsets.only(top: 10, left: 10, right: 10),
               ),
@@ -98,6 +98,7 @@ class _ContactsListState extends State<ContactsList> {
     setState(() {
       contacts = newcontacts.reversed.toList();
       isLoading = false;
+      totalcontacts = contacts.length;
     });
     // print(contacts.length);
   }
