@@ -67,19 +67,19 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const ContactsList()),
+                MaterialPageRoute(builder: (context) => const AddContact()),
               );
             },
-            icon: const Icon(CupertinoIcons.rectangle_stack_person_crop_fill),
+            icon: const Icon(CupertinoIcons.person_add),
           ),
           IconButton(
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const AddContact()),
+                MaterialPageRoute(builder: (context) => const ContactsList()),
               );
             },
-            icon: const Icon(CupertinoIcons.person_add),
+            icon: const Icon(CupertinoIcons.rectangle_stack_person_crop_fill),
           ),
         ],
       ),
