@@ -80,7 +80,7 @@ class _AddContactState extends State<AddContact> {
                   padding: MaterialStateProperty.resolveWith(
                       (states) => const EdgeInsets.symmetric(vertical: 16)),
                 ),
-                onLongPress: () {
+                onPressed: () {
                   _addContact();
                 },
                 child: const Text('Add Contact'),
