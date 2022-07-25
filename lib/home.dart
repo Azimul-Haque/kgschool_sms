@@ -183,6 +183,25 @@ class _HomePageState extends State<HomePage> {
                       validator: (value) {},
                     ),
                   ),
+                  const Divider(),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.resolveWith(
+                            (states) =>
+                                Theme.of(context).colorScheme.secondary),
+                        padding: MaterialStateProperty.resolveWith((states) =>
+                            const EdgeInsets.symmetric(vertical: 16)),
+                      ),
+                      onPressed: () {
+                        // if (_formKey.currentState!.validate()) {
+                        //   _updateContact();
+                        // }
+                      },
+                      child: const Text('Add Contact'),
+                    ),
+                  ),
                   Text(parseddata),
                 ],
               ),
