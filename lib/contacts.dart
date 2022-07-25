@@ -60,7 +60,7 @@ class _ContactsListState extends State<ContactsList> {
                           child: ListTile(
                             title: Text(contacts[index].id.toString() +
                                 ". " +
-                                [index].name),
+                                contacts[index].name),
                             subtitle: Text(contacts[index].contactnumber),
                             trailing: IconButton(
                               onPressed: () {
