@@ -63,7 +63,10 @@ class _ContactsListState extends State<ContactsList> {
                             trailing: IconButton(
                               onPressed: () {
                                 Navigator.push(
-                                    context, UpdateContact(contacts[index]));
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const AddContact()),
+                                );
                               },
                               icon: const Icon(Icons.edit),
                             ),
