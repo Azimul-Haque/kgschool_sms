@@ -170,6 +170,7 @@ class _HomePageState extends State<HomePage> {
                     child: TextFormField(
                       toolbarOptions:
                           const ToolbarOptions(copy: true, paste: true),
+                      minLines: 3,
                       autovalidateMode: AutovalidateMode.always,
                       decoration: const InputDecoration(
                         icon: Icon(Icons.sms),
