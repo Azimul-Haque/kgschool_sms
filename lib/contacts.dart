@@ -98,6 +98,7 @@ class _ContactsListState extends State<ContactsList> {
                       itemCount: adhoccontacts.length,
                       itemBuilder: (context, index) {
                         return Card(
+                          contentPadding: const EdgeInsets.only(right: 10),
                           child: ListTile(
                             title: Text((index + 1).toString() +
                                 ". " +
