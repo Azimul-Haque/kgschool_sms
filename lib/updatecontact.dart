@@ -31,6 +31,8 @@ class _UpdateContactState extends State<UpdateContact> {
     super.initState();
     _controllerName.text = widget.name;
     _controllerContactNumber.text = widget.contactnumber;
+    name = widget.name;
+    contactnumber = widget.name;
   }
 
   @override
@@ -52,7 +54,6 @@ class _UpdateContactState extends State<UpdateContact> {
               ListTile(
                 leading: const Icon(Icons.person),
                 title: TextFormField(
-                  // initialValue: widget.name,
                   controller: _controllerName,
                   decoration: const InputDecoration(labelText: 'Name'),
                   keyboardType: TextInputType.text,
@@ -71,7 +72,6 @@ class _UpdateContactState extends State<UpdateContact> {
               ListTile(
                 leading: const Icon(Icons.phone),
                 title: TextFormField(
-                  // initialValue: widget.contactnumber,
                   decoration: const InputDecoration(labelText: 'Mobile Number'),
                   controller: _controllerContactNumber,
                   keyboardType: TextInputType.number,
