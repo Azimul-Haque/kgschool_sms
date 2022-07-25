@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 // import 'package:flutter_sms/flutter_sms.dart';
@@ -65,8 +66,8 @@ class _ContactsListState extends State<ContactsList> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          UpdateContact(contacts[index])),
+                                      builder: (context) => UpdateContact(
+                                          contacts[index].document)),
                                 );
                               },
                               icon: const Icon(Icons.edit),
