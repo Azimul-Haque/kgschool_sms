@@ -15,6 +15,11 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    promptSMS();
+  }
+
+  void promptSMS() async {
+    await Permission.sms.request();
   }
 
   void _incrementCounter() {
