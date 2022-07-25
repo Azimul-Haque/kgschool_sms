@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   List<ContactModel> contacts = [];
   List<String> recipients = [];
   int _counter = 0;
+  late String parseddata;
 
   @override
   void initState() {
