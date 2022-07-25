@@ -78,6 +78,7 @@ class ContactHelper {
         where: 'id = ?',
         whereArgs: [contact.id],
       );
+      print('kaaj hoy to');
     } catch (_) {
       print(_);
     }
