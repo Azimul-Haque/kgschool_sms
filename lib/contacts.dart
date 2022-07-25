@@ -44,9 +44,9 @@ class _ContactsListState extends State<ContactsList> {
                 child: ListTile(
                   title: Text('মোট নাম্বারঃ '),
                 ),
-                margin: EdgeInsets.only(right: 0, bottom: 5),
+                margin: EdgeInsets.only(top: 10, left: 10, right: 10),
               ),
-              conrtacts.isNotEmpty
+              contacts.isNotEmpty
                   ? ListView.builder(
                       padding:
                           const EdgeInsets.only(top: 10, left: 10, right: 10),
