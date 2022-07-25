@@ -149,9 +149,7 @@ class _HomePageState extends State<HomePage> {
                     recipients.length.toString(),
                     style: Theme.of(context).textTheme.headline4,
                   ),
-                  Divider(
-                    height: 1,
-                  ),
+                  const Divider(),
                   DropdownButton<String>(
                     hint: const Text('কতগুলো মেসেজ পাঠাতে চান?'),
                     items: <String>[
