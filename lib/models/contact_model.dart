@@ -17,7 +17,7 @@ class ContactModel {
 
   Map<String, dynamic> toMap() {
     return {
-      columnId: this.id,
+      // columnId: this.id,
       columnName: name,
       columnContactNumber: contactnumber,
     };
