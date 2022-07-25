@@ -60,14 +60,10 @@ class ContactHelper {
     List<Map<String, dynamic>> contacts = await db.query(tableName);
     return List.generate(contacts.length, (i) {
       return ContactModel(
-          id: contacts[i][columnId],
-          name: contacts[i][columnTotalQstn],
-          duration: contacts[i][columnDuration],
-          rightanswer: contacts[i][columnRightAnswer],
-          wronganswer: contacts[i][columnWrongAnswer],
-          createdat: contacts[i][columnCreatedAt],
-          contactnumber: '',
-          name: '');
+        id: contacts[i][columnId],
+        name: contacts[i][columnName],
+        contactnumber: contacts[i][columnContactNumber],
+      );
     });
   }
 
