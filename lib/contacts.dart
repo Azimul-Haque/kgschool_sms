@@ -122,7 +122,9 @@ class _ContactsListState extends State<ContactsList> {
                                   icon: const Icon(Icons.edit),
                                 ),
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showDeleteDialog(context);
+                                  },
                                   icon: const Icon(Icons.delete_forever),
                                 ),
                               ],
