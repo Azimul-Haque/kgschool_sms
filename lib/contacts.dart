@@ -123,7 +123,8 @@ class _ContactsListState extends State<ContactsList> {
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    showDeleteDialog(context, adhoccontacts[index].id);
+                                    showDeleteDialog(
+                                        context, adhoccontacts[index].id);
                                   },
                                   icon: const Icon(Icons.delete_forever),
                                 ),
@@ -191,7 +192,7 @@ class _ContactsListState extends State<ContactsList> {
     print(adhoccontacts.length);
   }
 
-  Future<void> showDeleteDialog(BuildContext context) async {
+  Future<void> showDeleteDialog(BuildContext context, int contactid) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
@@ -209,7 +210,7 @@ class _ContactsListState extends State<ContactsList> {
             TextButton(
               child: const Text('Delete'),
               onPressed: () {
-                _contactHelper.deleteContact()
+                _contactHelper.deleteContact(contactid);
               },
             ),
           ],
