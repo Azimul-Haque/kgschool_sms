@@ -122,18 +122,7 @@ class _ContactsListState extends State<ContactsList> {
                                   icon: const Icon(Icons.edit),
                                 ),
                                 IconButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => UpdateContact(
-                                              adhoccontacts[index].id,
-                                              adhoccontacts[index].name,
-                                              adhoccontacts[index]
-                                                  .contactnumber,
-                                              refresh)),
-                                    );
-                                  },
+                                  onPressed: () {},
                                   icon: const Icon(Icons.delete_outline),
                                 ),
                               ],
