@@ -83,7 +83,9 @@ class _HomePageState extends State<HomePage> {
               ExcelToJson().convert().then((onValue) {
                 // print(jsonEncode(onValue).length);
                 setState(() {
-                  parseddata = jsonEncode({'contactdata': onValue});
+                  parseddata = jsonEncode([
+                    {'contactdata': onValue}
+                  ]);
                   // parseddata = onValue.split(",");
                   var decodeddata = jsonDecode(parseddata);
                   print(decodeddata.contactdata);
