@@ -123,7 +123,7 @@ class _ContactsListState extends State<ContactsList> {
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    showDeleteDialog(context);
+                                    showDeleteDialog(context, adhoccontacts[index].id);
                                   },
                                   icon: const Icon(Icons.delete_forever),
                                 ),
@@ -209,7 +209,7 @@ class _ContactsListState extends State<ContactsList> {
             TextButton(
               child: const Text('Delete'),
               onPressed: () {
-                Navigator.of(context).pop();
+                _contactHelper.deleteContact()
               },
             ),
           ],
