@@ -52,10 +52,10 @@ class _ContactsListState extends State<ContactsList> {
   }
 
   _loadDB() async {
-    await Future.delayed(Duration(seconds: 1)); // THIS LITLE LINE!!!
+    await Future.delayed(const Duration(seconds: 1)); // THIS LITLE LINE!!!
     var newquestions = await _contactHelper.getAllContacts();
     setState(() {
-      questions = newquestions.reversed.toList();
+      contacts = newquestions.reversed.toList();
       isLoading = false;
     });
     if (questions.length == 0) {
