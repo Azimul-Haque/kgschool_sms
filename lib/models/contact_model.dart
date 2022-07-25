@@ -79,7 +79,7 @@ class ContactHelper {
         whereArgs: [contact.id],
       );
     } catch (_) {
-      // print(_);
+      print(_);
     }
   }
 
