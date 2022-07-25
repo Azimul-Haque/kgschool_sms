@@ -51,8 +51,9 @@ class _ContactsListState extends State<ContactsList> {
                       itemBuilder: (context, index) {
                         return Card(
                           child: ListTile(
-                            title: Text(questions[index].question),
-                            subtitle: Text('- ' + questions[index].answer),
+                            title: Text(contacts[index].name),
+                            subtitle:
+                                Text('- ' + contacts[index].contactnumber),
                             trailing: IconButton(
                               onPressed: () {
                                 // UPLOAD XLXS
