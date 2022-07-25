@@ -84,7 +84,7 @@ class _AddContactState extends State<AddContact> {
                 onPressed: () {
                   _send();
                 },
-                child: const Text('SEND'),
+                child: const Text('Add Contact'),
               ),
             ),
             Visibility(
