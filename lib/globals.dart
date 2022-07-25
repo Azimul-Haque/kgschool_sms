@@ -7,5 +7,5 @@ void createSnackBar(String message) {
   final snackBar = new SnackBar(content: new Text(message));
 
   // Find the Scaffold in the Widget tree and use it to show a SnackBar!
-  Scaffold.of(context).showSnackBar(snackBar);
+  Scaffold.of(scaffoldContext).showSnackBar(snackBar);
 }
