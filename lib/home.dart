@@ -166,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const Divider(),
                   SizedBox(
-                    height: 500.0,
+                    height: 300.0,
                     child: TextFormField(
                       toolbarOptions:
                           const ToolbarOptions(copy: true, paste: true),
