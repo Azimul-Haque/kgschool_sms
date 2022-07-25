@@ -98,8 +98,8 @@ class _HomePageState extends State<HomePage> {
                       contactnumber: item['contact_Numbers'],
                     );
                     await _contactHelper.insertContact(newContact);
-                    showSimpleSnackBar(context, 'Added successfully!');
                   }
+                  showSimpleSnackBar(context, 'Added successfully!');
                 });
               });
             },
