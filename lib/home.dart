@@ -36,7 +36,8 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       contacts = newcontacts.reversed.toList();
     });
-    // print(contacts.length);
+    for (var item in contacts) {
+    recipients = }
   }
 
   void _sendSMS() async {
