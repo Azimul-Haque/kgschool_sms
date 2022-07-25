@@ -120,6 +120,6 @@ class _UpdateContactState extends State<UpdateContact> {
     );
     await _contactHelper.updateContact(newContact);
     showSimpleSnackBar(context, 'Updated successfully!');
-    Navigator.pop(context);
+    Navigator.pop(context, refresh);
   }
 }
