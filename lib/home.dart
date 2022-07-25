@@ -45,20 +45,20 @@ class _HomePageState extends State<HomePage> {
   void _sendSMS() async {
     String message = "This is a test message 654654!";
     // List<String> recipients = ["01837409842", "01751398392", "01744834258"];
-
-    for (var i = 0; i < recipients.length; i++) {
-      String _result = await sendSMS(
-              message: message, recipients: [recipients[i]], sendDirect: true)
-          .catchError((onError) {
-        print(onError);
-      });
-      if (_result == "SMS Sent!") {
-        setState(() {
-          _counter++;
-        });
-      }
-      print(_result);
-    }
+    print(recipients);
+    // for (var i = 0; i < recipients.length; i++) {
+    //   String _result = await sendSMS(
+    //           message: message, recipients: [recipients[i]], sendDirect: true)
+    //       .catchError((onError) {
+    //     print(onError);
+    //   });
+    //   if (_result == "SMS Sent!") {
+    //     setState(() {
+    //       _counter++;
+    //     });
+    //   }
+    //   print(_result);
+    // }
   }
   // void _incrementCounter() {
   //   setState(() {
