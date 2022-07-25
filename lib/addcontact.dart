@@ -11,7 +11,7 @@ class AddContact extends StatefulWidget {
 }
 
 class _AddContactState extends State<AddContact> {
-  late TextEditingController _controllerPeople, _controllerMessage;
+  late TextEditingController _controllerName, _controllerContactNumber;
   String? _message, body;
   String _canSendSMSMessage = 'Check is not run.';
   List<String> people = [];
@@ -24,14 +24,14 @@ class _AddContactState extends State<AddContact> {
   }
 
   Future<void> initPlatformState() async {
-    _controllerPeople = TextEditingController();
-    _controllerMessage = TextEditingController();
+    _controllerName = TextEditingController();
+    _controllerContactNumber = TextEditingController();
   }
 
   Future<void> _sendSMS(List<String> recipients) async {
     try {
       String _result = await sendSMS(
-        message: _controllerMessage.text,
+        message: _controllerContactNumber.text,
         recipients: recipients,
         sendDirect: sendDirect,
       );
@@ -115,7 +115,7 @@ class _AddContactState extends State<AddContact> {
             ListTile(
               leading: const Icon(Icons.people),
               title: TextField(
-                controller: _controllerPeople,
+                controller: _controllerName,
                 decoration:
                     const InputDecoration(labelText: 'Add Phone Number'),
                 keyboardType: TextInputType.number,
@@ -123,11 +123,11 @@ class _AddContactState extends State<AddContact> {
               ),
               trailing: IconButton(
                 icon: const Icon(Icons.add),
-                onPressed: _controllerPeople.text.isEmpty
+                onPressed: _controllerName.text.isEmpty
                     ? null
                     : () => setState(() {
-                          people.add(_controllerPeople.text.toString());
-                          _controllerPeople.clear();
+                          people.add(_controllerName.text.toString());
+                          _controllerName.clear();
                         }),
               ),
             ),
@@ -136,7 +136,7 @@ class _AddContactState extends State<AddContact> {
               leading: const Icon(Icons.message),
               title: TextField(
                 decoration: const InputDecoration(labelText: 'Add Message'),
-                controller: _controllerMessage,
+                controller: _controllerContactNumber,
                 onChanged: (String value) => setState(() {}),
               ),
             ),
