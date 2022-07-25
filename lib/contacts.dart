@@ -42,7 +42,7 @@ class _ContactsListState extends State<ContactsList> {
             children: [
               const Card(
                 child: ListTile(
-                  title: Text(contacts.length.toString()),
+                  title: Text(645654),
                 ),
                 margin: EdgeInsets.only(top: 10, left: 10, right: 10),
               ),
