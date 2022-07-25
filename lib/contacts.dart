@@ -138,7 +138,8 @@ class _ContactsListState extends State<ContactsList> {
                                 ),
                               ],
                             ),
-                            // contentPadding: const EdgeInsets.only(right: 10),
+                            contentPadding:
+                                const EdgeInsets.only(left: 10, right: 10),
                           ),
                           margin: const EdgeInsets.only(right: 0, bottom: 5),
                           elevation: 2,
