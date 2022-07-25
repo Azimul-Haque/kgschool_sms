@@ -13,12 +13,13 @@ class ContactsList extends StatefulWidget {
 }
 
 class _ContactsListState extends State<ContactsList> {
-  late ContactHelper _ContactHelper;
+  late ContactHelper _contactHelper;
   List<ContactModel> contacts = [];
 
   @override
   void initState() {
     super.initState();
+    _loadDB();
   }
 
   @override
