@@ -30,6 +30,7 @@ class _UpdateContactState extends State<UpdateContact> {
   @override
   void initState() {
     super.initState();
+    print(widget.name);
   }
 
   @override
