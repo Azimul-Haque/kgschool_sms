@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                   // parseddata = onValue.split(",");
                   List decodeddata = jsonDecode(onValue!);
                   // print('${decodeddata.runtimeType} : $decodeddata');
-                  print(decodeddata.toString());
+                  print(decodeddata.length);
                 });
               });
             },
