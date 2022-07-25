@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_sms/flutter_sms.dart';
+// import 'package:flutter_sms/flutter_sms.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 import 'package:kgschool_sms/updatecontact.dart';
 // import 'package:sqflite/sqflite.dart';
@@ -65,8 +65,9 @@ class _ContactsListState extends State<ContactsList> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const UpdateContact(contacts[index])),
+                                      builder: (context) => const UpdateContact(
+                                            contact: contacts[index],
+                                          )),
                                 );
                               },
                               icon: const Icon(Icons.edit),
