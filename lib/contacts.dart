@@ -56,7 +56,7 @@ class _ContactsListState extends State<ContactsList> {
                                 Text('- ' + contacts[index].contactnumber),
                             trailing: IconButton(
                               onPressed: () {
-                                // UPLOAD XLXS
+                                // EDIT ER KAAJ
                               },
                               icon: const Icon(Icons.edit),
                             ),
