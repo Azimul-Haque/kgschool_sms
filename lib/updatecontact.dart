@@ -1,15 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_sms/flutter_sms.dart';
+// import 'package:flutter_sms/flutter_sms.dart';
 import 'package:kgschool_sms/globals.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 
 class UpdateContact extends StatefulWidget {
   final List<ContactModel> contact;
-  const UpdateContact(
-    contact, {
+  const UpdateContact({
     Key? key,
+    required this.contact,
   }) : super(key: key);
   // const UpdateContact({Key? key}) : super(key: key);
 
