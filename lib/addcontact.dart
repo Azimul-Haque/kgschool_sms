@@ -86,23 +86,6 @@ class _AddContactState extends State<AddContact> {
                 child: const Text('Add Contact'),
               ),
             ),
-            Visibility(
-              visible: name != null,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Text(
-                        name ?? 'No Data',
-                        maxLines: null,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),
