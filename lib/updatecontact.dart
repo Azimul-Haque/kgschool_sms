@@ -32,7 +32,7 @@ class _UpdateContactState extends State<UpdateContact> {
     _controllerName.text = widget.name;
     _controllerContactNumber.text = widget.contactnumber;
     name = widget.name;
-    contactnumber = widget.name;
+    contactnumber = widget.contactnumber;
   }
 
   @override
