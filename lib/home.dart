@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               // UPLOAD XLXS
               ExcelToJson().convert().then((onValue) {
-                print(jsonEncode(onValue));
+                print(jsonEncode(onValue).length);
               });
             },
             icon: const Icon(CupertinoIcons.cloud_upload_fill),
