@@ -166,7 +166,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const Divider(),
                   SizedBox(
-                    height: 200,
+                    height: 200.0,
+                    width: 100.0,
                     child: TextFormField(
                       autovalidateMode: AutovalidateMode.always,
                       decoration: const InputDecoration(
