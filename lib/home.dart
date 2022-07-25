@@ -5,6 +5,7 @@ import 'package:kgschool_sms/contacts.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import 'package:excel_to_json/excel_to_json.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -76,6 +77,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             onPressed: () {
               // UPLOAD XLXS
+              ExcelToJson().convert().then((onValue) {});
             },
             icon: const Icon(CupertinoIcons.cloud_upload_fill),
           ),
