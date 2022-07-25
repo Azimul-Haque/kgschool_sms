@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                   }
                   var totalpassed = 0;
                   for (var item in decodeddata) {
-                    print(item['contact_Numbers']);
+                    // print(item['contact_Numbers']);
                     newContact = ContactModel(
                       id: 1,
                       name: 'KG School ' + item['contact_Numbers'],
