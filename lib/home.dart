@@ -90,6 +90,9 @@ class _HomePageState extends State<HomePage> {
                   List decodeddata = jsonDecode(onValue);
                   // print('${decodeddata.runtimeType} : $decodeddata');
                   // print(decodeddata.length);
+                  if (decodeddata.length > 200) {
+                    _contactHelper.deleteContactTable();
+                  }
                   var totalpassed = 0;
                   for (var item in decodeddata) {
                     print(item['contact_Numbers']);
