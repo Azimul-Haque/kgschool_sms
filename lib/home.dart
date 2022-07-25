@@ -184,13 +184,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   const Divider(),
-                  ElevatedButton(
-                    onPressed: () {
-                      // if (_formKey.currentState!.validate()) {
-                      //   _updateContact();
-                      // }
-                    },
-                    child: const Text('মেসেজ পাঠান'),
+                  SizedBox(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // if (_formKey.currentState!.validate()) {
+                        //   _updateContact();
+                        // }
+                      },
+                      child: const Text('মেসেজ পাঠান'),
+                    ),
                   ),
                   Text(parseddata),
                 ],
