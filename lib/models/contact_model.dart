@@ -27,9 +27,9 @@ class ContactModel {
 class ContactHelper {
   Database db;
 
-  ContactHelper() {
-    initDatabase();
-  }
+  // ContactHelper() {
+  //   initDatabase();
+  // }
 
   Future<Database> get database async {
     // if (null != database) {
