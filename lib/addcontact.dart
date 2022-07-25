@@ -72,16 +72,6 @@ class _AddContactState extends State<AddContact> {
               ),
             ),
             const Divider(),
-            SwitchListTile(
-                title: const Text('Send Direct'),
-                subtitle: const Text(
-                    'Should we skip the additional dialog? (Android only)'),
-                value: sendDirect,
-                onChanged: (bool newValue) {
-                  setState(() {
-                    sendDirect = newValue;
-                  });
-                }),
             Padding(
               padding: const EdgeInsets.all(8),
               child: ElevatedButton(
