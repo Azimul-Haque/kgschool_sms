@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                   ]);
                   // parseddata = onValue.split(",");
                   var decodeddata = jsonDecode(parseddata);
-                  print(decodeddata.contactdata);
+                  print('${decodeddata.runtimeType} : $decodeddata');
                 });
               });
             },
