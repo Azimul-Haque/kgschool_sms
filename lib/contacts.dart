@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import 'package:kgschool_sms/models/contact_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ContactsList extends StatefulWidget {
@@ -12,7 +13,8 @@ class ContactsList extends StatefulWidget {
 }
 
 class _ContactsListState extends State<ContactsList> {
-  List<String> people = [];
+  late ContactHelper _ContactHelper;
+  List<ContactModel> contacts = [];
 
   @override
   void initState() {
