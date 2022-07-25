@@ -53,7 +53,7 @@ class _AddContactState extends State<AddContact> {
         body: ListView(
           children: <Widget>[
             ListTile(
-              leading: const Icon(Icons.people),
+              leading: const Icon(Icons.person),
               title: TextField(
                 controller: _controllerName,
                 decoration: const InputDecoration(labelText: 'Name'),
