@@ -69,8 +69,6 @@ class ContactHelper {
   }
 
   Future<void> updateContact(ContactModel contact) async {
-    // Get a reference to the database.
-    // final db = await database;
     try {
       await db.update(
         tableName,
@@ -82,6 +80,16 @@ class ContactHelper {
     } catch (_) {
       print(_);
     }
+  }
+
+  Future<void> deleteContact(int id) async {
+    await db.delete(
+      'dogs',
+      // Use a `where` clause to delete a specific dog.
+      where: 'id = ?',
+      // Pass the Dog's id as a whereArg to prevent SQL injection.
+      whereArgs: [id],
+    );
   }
 
   // Future<List<ContactModel>> getSomeQuestions (String amount) async{
