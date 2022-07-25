@@ -13,7 +13,7 @@ class ContactsList extends StatefulWidget {
 }
 
 class _ContactsListState extends State<ContactsList> {
-  late ContactHelper _contactHelper;
+  ContactHelper? _contactHelper;
   List<ContactModel> contacts = [];
   late bool isLoading;
 
