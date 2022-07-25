@@ -206,6 +206,12 @@ class _ContactsListState extends State<ContactsList> {
           ),
           actions: <Widget>[
             TextButton(
+              child: const Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
               child: const Text('Delete'),
               onPressed: () {
                 Navigator.of(context).pop();
