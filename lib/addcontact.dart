@@ -113,7 +113,7 @@ class _AddContactState extends State<AddContact> {
     } else {
       newContact =
           ContactModel(name: name, contactnumber: contactnumber, id: null);
-      _contactHelper.insertQuestion(currentQuestion);
+      _contactHelper.insertContact(newContact);
     }
   }
 }
