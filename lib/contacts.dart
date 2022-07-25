@@ -16,7 +16,13 @@ class ContactsList extends StatefulWidget {
 class _ContactsListState extends State<ContactsList> {
   final ContactHelper _contactHelper = ContactHelper();
   List<ContactModel> contacts = [];
+  List<ContactModel> adhoccontacts = [];
   late bool isLoading;
+
+  Widget appBarTitle = const Text('Contact List');
+  Icon actionIcon = const Icon(Icons.search);
+  final TextEditingController _controllerSearch = TextEditingController();
+  bool search = false;
 
   @override
   void initState() {
@@ -31,50 +37,106 @@ class _ContactsListState extends State<ContactsList> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          title: const Text('Contact List'),
-        ),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            title: appBarTitle,
+            actions: <Widget>[
+              IconButton(
+                icon: actionIcon,
+                onPressed: () {
+                  setState(() {
+                    if (actionIcon.icon == Icons.search) {
+                      actionIcon = const Icon(Icons.close);
+                      appBarTitle = TextField(
+                        showCursor: true,
+                        cursorColor: Colors.white,
+                        autofocus: true,
+                        controller: _controllerSearch,
+                        style: const TextStyle(
+                          color: Colors.white,
+                        ),
+                        decoration: const InputDecoration(
+                          // prefixIcon: Icon(Icons.search, color: Colors.white),
+                          hintText: " Search...",
+                          hintStyle: TextStyle(color: Colors.white),
+                        ),
+                        onChanged: (value) {
+                          // print('First text field: $value');
+                          searchContact(value);
+                        },
+                      );
+                    } else {
+                      actionIcon = const Icon(Icons.search);
+                      appBarTitle = const Text('Contact List');
+                      _controllerSearch.text = '';
+                      _loadContacts();
+                    }
+                  });
+                },
+              ),
+            ]),
         body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Card(
                 child: ListTile(
-                  title: Text('মোট নাম্বারঃ ' + contacts.length.toString()),
+                  title:
+                      Text('মোট নাম্বারঃ ' + adhoccontacts.length.toString()),
                 ),
                 margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
               ),
-              contacts.isNotEmpty
+              adhoccontacts.isNotEmpty
                   ? ListView.builder(
                       padding:
                           const EdgeInsets.only(top: 10, left: 10, right: 10),
                       physics: const ClampingScrollPhysics(),
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
-                      itemCount: contacts.length,
+                      itemCount: adhoccontacts.length,
                       itemBuilder: (context, index) {
                         return Card(
                           child: ListTile(
                             title: Text((index + 1).toString() +
                                 ". " +
-                                contacts[index].name),
-                            subtitle: Text(contacts[index].contactnumber),
-                            trailing: IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => UpdateContact(
-                                          contacts[index].id,
-                                          contacts[index].name,
-                                          contacts[index].contactnumber,
-                                          refresh)),
-                                );
-                              },
-                              icon: const Icon(Icons.edit),
+                                adhoccontacts[index].name),
+                            subtitle: Text(adhoccontacts[index].contactnumber),
+                            trailing: Wrap(
+                              spacing: 0,
+                              children: <Widget>[
+                                IconButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => UpdateContact(
+                                              adhoccontacts[index].id,
+                                              adhoccontacts[index].name,
+                                              adhoccontacts[index]
+                                                  .contactnumber,
+                                              refresh)),
+                                    );
+                                  },
+                                  icon: const Icon(Icons.edit),
+                                ),
+                                IconButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => UpdateContact(
+                                              adhoccontacts[index].id,
+                                              adhoccontacts[index].name,
+                                              adhoccontacts[index]
+                                                  .contactnumber,
+                                              refresh)),
+                                    );
+                                  },
+                                  icon: const Icon(Icons.delete_outline),
+                                ),
+                              ],
                             ),
                           ),
                           margin: const EdgeInsets.only(right: 0, bottom: 5),
@@ -91,7 +153,7 @@ class _ContactsListState extends State<ContactsList> {
                           ),
                           isLoading == true
                               ? const CircularProgressIndicator()
-                              : const Text("কোন নতুন নাম্বার নেই!"),
+                              : const Text("কোন নাম্বার পাওয়া যায়নি!"),
                         ],
                       ),
                     ),
@@ -107,12 +169,32 @@ class _ContactsListState extends State<ContactsList> {
     var newcontacts = await _contactHelper.getAllContacts();
     setState(() {
       contacts = newcontacts.reversed.toList();
+      adhoccontacts = newcontacts.reversed.toList();
       isLoading = false;
     });
+
     // print(contacts.length);
   }
 
   refresh() {
     _loadContacts();
+  }
+
+  searchContact(value) {
+    List<ContactModel> searchContacts = [];
+    for (var contact in contacts) {
+      if (contact.name.toLowerCase().contains(value.toLowerCase()) ||
+          contact.contactnumber
+              .toString()
+              .toLowerCase()
+              .contains(value.toLowerCase())) {
+        searchContacts.add(contact);
+      }
+    }
+    setState(() {
+      adhoccontacts = [];
+      adhoccontacts = searchContacts;
+    });
+    print(adhoccontacts.length);
   }
 }
