@@ -59,10 +59,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ContactsList()),
-              );
+              // UPLOAD XLXS
             },
             icon: const Icon(CupertinoIcons.cloud_upload_fill),
           ),
