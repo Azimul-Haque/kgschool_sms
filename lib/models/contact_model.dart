@@ -8,14 +8,11 @@ const String columnName = "name";
 const String columnContactNumber = "contactnumber";
 
 class ContactModel {
-  int id;
+  final int id;
   final String name;
   final String contactnumber;
 
-  ContactModel(
-    this.name,
-    this.contactnumber,
-  );
+  ContactModel(this.name, this.contactnumber, {id, name, contactnumber});
 
   Map<String, dynamic> toMap() {
     return {
