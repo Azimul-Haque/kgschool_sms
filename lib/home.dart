@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                   // parseddata = onValue.split(",");
                   List decodeddata = jsonDecode(onValue);
                   // print('${decodeddata.runtimeType} : $decodeddata');
-                  // print(decodeddata.length);
+                  print(decodeddata.length);
                   if (decodeddata.length > 200) {
                     await _contactHelper.deleteContactTable();
                   }
