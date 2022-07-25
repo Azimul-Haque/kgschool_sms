@@ -51,7 +51,7 @@ class _AddContactState extends State<AddContact> {
                   onChanged: (String value) => setState(() {}),
                   validator: (text) {
                     if (text == null || text.isEmpty) {
-                      return 'Text is empty';
+                      return 'Name is empty';
                     }
                     return null;
                   },
@@ -67,7 +67,7 @@ class _AddContactState extends State<AddContact> {
                   onChanged: (String value) => setState(() {}),
                   validator: (text) {
                     if (text == null || text.isEmpty) {
-                      return 'Text is empty';
+                      return 'Mobile Number is empty';
                     }
                     return null;
                   },
