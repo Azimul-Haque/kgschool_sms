@@ -71,7 +71,7 @@ class _ContactsListState extends State<ContactsList> {
                                           contacts[index].id,
                                           contacts[index].name,
                                           contacts[index].contactnumber,
-                                          refresh())),
+                                          refresh)),
                                 );
                               },
                               icon: const Icon(Icons.edit),
@@ -112,7 +112,7 @@ class _ContactsListState extends State<ContactsList> {
     // print(contacts.length);
   }
 
-  void refresh() {
+  refresh() {
     _loadContacts();
   }
 }
