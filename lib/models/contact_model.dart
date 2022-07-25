@@ -72,7 +72,6 @@ class ContactHelper {
     // Get a reference to the database.
     final db = await database;
 
-    // Update the given Dog.
     await db.update(
       'dogs',
       contact.toMap(),
