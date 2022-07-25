@@ -42,59 +42,9 @@ class _ContactsListState extends State<ContactsList> {
               ),
             ),
             const Divider(),
-            SwitchListTile(
-                title: const Text('Send Direct'),
-                subtitle: const Text(
-                    'Should we skip the additional dialog? (Android only)'),
-                value: sendDirect,
-                onChanged: (bool newValue) {
-                  setState(() {
-                    sendDirect = newValue;
-                  });
-                }),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith(
-                      (states) => Theme.of(context).colorScheme.secondary),
-                  padding: MaterialStateProperty.resolveWith(
-                      (states) => const EdgeInsets.symmetric(vertical: 16)),
-                ),
-                onPressed: () {
-                  _send();
-                },
-                child: const Text('SEND'),
-              ),
-            ),
-            Visibility(
-              visible: _message != null,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Text(
-                        _message ?? 'No Data',
-                        maxLines: null,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),
     );
-  }
-
-  void _send() {
-    if (people.isEmpty) {
-      setState(() => _message = 'At Least 1 Person or Message Required');
-    } else {
-      _sendSMS(people);
-    }
   }
 }
