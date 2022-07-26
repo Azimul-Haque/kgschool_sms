@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomSheet: const SizedBox(
+      bottomSheet: const SizedBox.expand(
         height: 40,
         width: screenwidth.infinity,
         child: Text('Text'),
