@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
 
   void _sendSMS() async {
     // List<String> recipients = ["01837409842", "01751398392", "01744834258"];
-    print(recipients);
+    // print(recipients);
     setState(() {
       showloading = true;
     });
@@ -77,10 +77,10 @@ class _HomePageState extends State<HomePage> {
         temprecipients.add(recipients[i]);
       }
     }
-    print(temprecipients.length);
-    print(temprecipients.toString());
-    print(dropdownvalue);
-    print(message);
+    // print(temprecipients.length);
+    // print(temprecipients.toString());
+    // print(dropdownvalue);
+    // print(message);
     _counter = 0;
 
     // showLoadingDialog(context);
