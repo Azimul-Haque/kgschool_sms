@@ -238,7 +238,7 @@ class _ContactsListState extends State<ContactsList> {
         return AlertDialog(
           title: const Text('Delete Contact List'),
           content: const Text(
-              'আপনি কি নিশ্চিতভাবে পুরো কন্টাক্টলিস্ট ডিলেট করতে চান?'),
+              'আপনি কি নিশ্চিতভাবে পুরো কন্টাক্ট লিস্ট ডিলেট করতে চান?'),
           actions: <Widget>[
             TextButton(
               child: const Text('Cancel'),
