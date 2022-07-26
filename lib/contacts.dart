@@ -108,7 +108,7 @@ class _ContactsListState extends State<ContactsList> {
                           child: ListTile(
                             title: Text((index + 1).toString() +
                                 ". " +
-                                adhoccontacts[index].name),
+                                adhoccontacts[index].id.toString()),
                             subtitle: Text(adhoccontacts[index].contactnumber),
                             trailing: Wrap(
                               spacing: 0,
