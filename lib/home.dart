@@ -174,122 +174,115 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: [
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  const Text(
-                    'মোট নাম্বারঃ ',
-                  ),
-                  Text(
-                    recipients.length.toString(),
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-                  const Divider(),
-                  Form(
-                    key: _formKey,
-                    child: Column(
-                      children: <Widget>[
-                        DropdownButtonFormField<String>(
-                          value: 'কতগুলো মেসেজ পাঠাতে চান?',
-                          hint: const Text('কতগুলো মেসেজ পাঠাতে চান?'),
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          isExpanded: true,
-                          items: <String>[
-                            'কতগুলো মেসেজ পাঠাতে চান?',
-                            'প্রথম ২২০ টি নম্বরে',
-                            '২২১ নম্বর থেকে পরবর্তী সকল নম্বরে'
-                          ].map((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                          validator: (value) {
-                            if (value == 'কতগুলো মেসেজ পাঠাতে চান?') {
-                              return 'Required';
-                            }
-                            return null;
-                          },
-                          onChanged: (value) {
-                            if (value == 'প্রথম ২২০ টি নম্বরে') {
-                              setState(() {
-                                dropdownvalue = 220;
-                              });
-                            } else if (value ==
-                                '২২১ নম্বর থেকে পরবর্তী সকল নম্বরে') {
-                              setState(() {
-                                dropdownvalue = 221;
-                              });
-                            }
-                            print(value);
-                          },
-                        ),
-                        const Divider(),
-                        TextFormField(
-                          controller: _controllerMessage,
-                          maxLength: 98,
-                          toolbarOptions: const ToolbarOptions(
-                              copy: true,
-                              paste: true,
-                              cut: true,
-                              selectAll: true),
-                          minLines: 3,
-                          maxLines: 4,
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          decoration: const InputDecoration(
-                            icon: Icon(Icons.sms),
-                            hintText: 'টেক্সট মেসেজ লিখুন',
-                            labelText: 'মেসেজ',
-                          ),
-                          onChanged: (String value) {
-                            setState(() {
-                              message = value;
-                            });
-                          },
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Required';
-                            }
-                            return null;
-                          },
-                        ),
-                        const Divider(),
-                        SizedBox(
-                          width: 400,
-                          child: showloading == false
-                              ? ElevatedButton(
-                                  onPressed: () {
-                                    if (_formKey.currentState!.validate()) {
-                                      _sendSMS();
-                                      _formKey.currentState!.reset();
-                                    }
-                                  },
-                                  child: const Text('মেসেজ পাঠান'),
-                                )
-                              : Container(),
-                        ),
-                        const Divider(),
-                        showloading == true
-                            ? const CircularProgressIndicator()
-                            : Container(),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        showloading == true
-                            ? Text(_counter.toString() +
-                                ' টি নাম্বারে পাঠানো হয়েছে।')
-                            : Container(),
-                      ],
-                    ),
-                  ),
-                  // Text(parseddata),
-                ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'মোট নাম্বারঃ ',
               ),
-            ),
-          ],
+              Text(
+                recipients.length.toString(),
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              const Divider(),
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    DropdownButtonFormField<String>(
+                      value: 'কতগুলো মেসেজ পাঠাতে চান?',
+                      hint: const Text('কতগুলো মেসেজ পাঠাতে চান?'),
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      isExpanded: true,
+                      items: <String>[
+                        'কতগুলো মেসেজ পাঠাতে চান?',
+                        'প্রথম ২২০ টি নম্বরে',
+                        '২২১ নম্বর থেকে পরবর্তী সকল নম্বরে'
+                      ].map((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      validator: (value) {
+                        if (value == 'কতগুলো মেসেজ পাঠাতে চান?') {
+                          return 'Required';
+                        }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        if (value == 'প্রথম ২২০ টি নম্বরে') {
+                          setState(() {
+                            dropdownvalue = 220;
+                          });
+                        } else if (value ==
+                            '২২১ নম্বর থেকে পরবর্তী সকল নম্বরে') {
+                          setState(() {
+                            dropdownvalue = 221;
+                          });
+                        }
+                        print(value);
+                      },
+                    ),
+                    const Divider(),
+                    TextFormField(
+                      controller: _controllerMessage,
+                      maxLength: 98,
+                      toolbarOptions: const ToolbarOptions(
+                          copy: true, paste: true, cut: true, selectAll: true),
+                      minLines: 3,
+                      maxLines: 4,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.sms),
+                        hintText: 'টেক্সট মেসেজ লিখুন',
+                        labelText: 'মেসেজ',
+                      ),
+                      onChanged: (String value) {
+                        setState(() {
+                          message = value;
+                        });
+                      },
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Required';
+                        }
+                        return null;
+                      },
+                    ),
+                    const Divider(),
+                    SizedBox(
+                      width: 400,
+                      child: showloading == false
+                          ? ElevatedButton(
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {
+                                  _sendSMS();
+                                  _formKey.currentState!.reset();
+                                }
+                              },
+                              child: const Text('মেসেজ পাঠান'),
+                            )
+                          : Container(),
+                    ),
+                    const Divider(),
+                    showloading == true
+                        ? const CircularProgressIndicator()
+                        : Container(),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    showloading == true
+                        ? Text(
+                            _counter.toString() + ' টি নাম্বারে পাঠানো হয়েছে।')
+                        : Container(),
+                  ],
+                ),
+              ),
+              // Text(parseddata),
+            ],
+          ),
         ),
       ),
       // floatingActionButton: FloatingActionButton(
