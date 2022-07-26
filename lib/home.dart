@@ -72,6 +72,10 @@ class _HomePageState extends State<HomePage> {
           temprecipients.add(recipients[i]);
         }
       }
+    } else {
+      for (var i = 0; i < recipients.length; i++) {
+        temprecipients.add(recipients[i]);
+      }
     }
     print(temprecipients.length);
     print(temprecipients.toString());
