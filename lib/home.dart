@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kgschool_sms/addcontact.dart';
@@ -32,6 +33,8 @@ class _HomePageState extends State<HomePage> {
   late String message;
   late int captchanumber;
   int dropdownvalue = 0;
+  Random random = Random();
+  int randomNumber = random.nextInt(100);
 
   @override
   void initState() {
