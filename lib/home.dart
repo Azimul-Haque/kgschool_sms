@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   bool showloading = false;
   late String parseddata = '';
   late String message;
+  late int captchanumber;
   int dropdownvalue = 0;
 
   @override
@@ -282,7 +283,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onChanged: (String value) {
                         setState(() {
-                          message = value;
+                          captchanumber = value;
                         });
                       },
                       validator: (value) {
