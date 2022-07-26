@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
   late int randomNumber1;
   late int randomNumber2;
   late int randomSum;
-  static String hint = 'যোগফল';
+  const String hint = 'যোগফল';
 
   @override
   void initState() {
