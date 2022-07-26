@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   late int randomNumber1;
   late int randomNumber2;
   late int randomSum;
-  late String _hint;
+  String _hint = '';
 
   @override
   void initState() {
