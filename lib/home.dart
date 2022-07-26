@@ -62,13 +62,15 @@ class _HomePageState extends State<HomePage> {
     });
     FocusScope.of(context).requestFocus(FocusNode());
     List temprecipients = [];
-    if (dropdownvalue == 220) {
-      for (var i = 0; i < 220; i++) {
-        temprecipients.add(recipients[i]);
-      }
-    } else if (dropdownvalue == 221) {
-      for (var i = 220; i < recipients.length; i++) {
-        temprecipients.add(recipients[i]);
+    if (recipients.length > 220) {
+      if (dropdownvalue == 220) {
+        for (var i = 0; i < 220; i++) {
+          temprecipients.add(recipients[i]);
+        }
+      } else if (dropdownvalue == 221) {
+        for (var i = 220; i < recipients.length; i++) {
+          temprecipients.add(recipients[i]);
+        }
       }
     }
     print(temprecipients.length);
