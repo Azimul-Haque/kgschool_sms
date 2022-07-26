@@ -276,7 +276,7 @@ class _HomePageState extends State<HomePage> {
                       maxLength: 5,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       decoration: const InputDecoration(
-                        icon: Icon(Icons.sms),
+                        icon: Icon(Icons.calculate),
                         hintText: 'টেক্সট মেসেজ লিখুন',
                         labelText: 'যোগফল',
                       ),
