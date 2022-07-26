@@ -274,8 +274,8 @@ class _HomePageState extends State<HomePage> {
                           ? ElevatedButton(
                               onPressed: () {
                                 if (_formKey.currentState!.validate()) {
-                                  _formKey.currentState!.reset();
                                   _sendSMS();
+                                  _formKey.currentState!.reset();
                                 }
                               },
                               child: const Text('মেসেজ পাঠান'),
