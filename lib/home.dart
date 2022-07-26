@@ -115,11 +115,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomSheet: const Expanded(
-        child: Center(
-          child: SizedBox(
-            height: 40,
-            child: Text('Text'),
-          ),
+        child: SizedBox(
+          height: 40,
+          child: Text('Text'),
         ),
       ),
       appBar: AppBar(
