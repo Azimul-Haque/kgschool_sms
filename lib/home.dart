@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
   late int captchanumber;
   int dropdownvalue = 0;
   Random random = Random();
-  int randomNumber = random.nextInt(100);
+  int randomNumber;
 
   @override
   void initState() {
