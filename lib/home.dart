@@ -123,6 +123,7 @@ class _HomePageState extends State<HomePage> {
       if (temprecipients.length == _counter) {
         showSimpleSnackBar(
             context, _counter.toString() + ' টি নাম্বারে মেসেজ পাঠানো হয়েছে!');
+        await Future.delayed(const Duration(seconds: 1));
         setState(() {
           showloading = false;
         });
