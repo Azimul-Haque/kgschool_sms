@@ -291,6 +291,7 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                     TextFormField(
+                      focusNode: _focusNode,
                       controller: _controllerCaptcha,
                       maxLength: 5,
                       keyboardType: TextInputType.number,
