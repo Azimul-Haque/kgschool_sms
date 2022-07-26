@@ -114,6 +114,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: const Text('test'),
       appBar: AppBar(
         leading: const Icon(Icons.message),
         title: const Text('School SMS'),
