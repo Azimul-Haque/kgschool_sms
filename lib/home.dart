@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   late int randomNumber1;
   late int randomNumber2;
   late int randomSum;
-  String _hint = '';
+  String hint = '';
 
   @override
   void initState() {
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
       randomNumber1 = random.nextInt(10);
       randomNumber2 = random.nextInt(10);
       randomSum = randomNumber1 + randomNumber2;
-      _hint = randomNumber1.toString() +
+      hint = randomNumber1.toString() +
           ' + ' +
           randomNumber2.toString() +
           ' = ? (ইংরেজিতে লিখুন)';
@@ -296,7 +296,7 @@ class _HomePageState extends State<HomePage> {
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       decoration: const InputDecoration(
                         icon: Icon(Icons.calculate),
-                        hintText: _hint,
+                        hintText: hint,
                         labelText: 'যোগফল',
                       ),
                       onChanged: (String value) {
