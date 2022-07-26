@@ -120,6 +120,7 @@ class _HomePageState extends State<HomePage> {
         child: Text(
           'Developed by A. H. M. Azimul Haque',
           textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.black54),
         ),
       ),
 
