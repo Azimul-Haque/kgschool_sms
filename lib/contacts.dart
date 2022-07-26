@@ -249,7 +249,7 @@ class _ContactsListState extends State<ContactsList> {
             TextButton(
               child: const Text('Delete'),
               onPressed: () {
-                showSimpleSnackBar(context, 'Deleted successfully');
+                showSimpleSnackBar(context, 'Deleted srRuccessfully');
                 _contactHelper.dropContactTable();
                 Navigator.of(context).pop();
                 _loadContacts();
