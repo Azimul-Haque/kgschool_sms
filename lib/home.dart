@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   static int randomNumber1 = Random().nextInt(10);
   static int randomNumber2 = Random().nextInt(10);
   static int randomSum = randomNumber1 + randomNumber2;
-  static String hint = randomNumber1.toString() +
+  static const String hint = randomNumber1.toString() +
       ' + ' +
       randomNumber2.toString() +
       ' = ? (ইংরেজিতে লিখুন)';
