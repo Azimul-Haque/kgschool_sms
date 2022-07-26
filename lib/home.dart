@@ -48,8 +48,10 @@ class _HomePageState extends State<HomePage> {
       randomNumber1 = random.nextInt(10);
       randomNumber2 = random.nextInt(10);
       randomSum = randomNumber1 + randomNumber2;
-      _hint =
-          randomNumber1.toString() + ' + ' + randomNumber2.toString() + ' = ?';
+      _hint = randomNumber1.toString() +
+          ' + ' +
+          randomNumber2.toString() +
+          ' = ? (ইংরেজিতে লিখুন)';
     });
     // print(randomNumber1);
     // print(randomNumber2);
