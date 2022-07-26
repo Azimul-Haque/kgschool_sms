@@ -275,7 +275,7 @@ class _HomePageState extends State<HomePage> {
                               onPressed: () {
                                 if (_formKey.currentState!.validate()) {
                                   _sendSMS();
-                                  // _formKey.currentState!.reset();
+                                  _formKey.currentState!.reset();
                                 }
                               },
                               child: const Text('মেসেজ পাঠান'),
