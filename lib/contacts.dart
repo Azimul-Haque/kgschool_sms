@@ -8,7 +8,8 @@ import 'package:kgschool_sms/updatecontact.dart';
 // import 'package:sqflite/sqflite.dart';
 
 class ContactsList extends StatefulWidget {
-  const ContactsList({Key? key}) : super(key: key);
+  final Function refresh;
+  const ContactsList(this.refresh, {Key? key}) : super(key: key);
 
   @override
   _ContactsListState createState() => _ContactsListState();
