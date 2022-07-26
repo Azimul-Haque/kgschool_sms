@@ -102,9 +102,9 @@ class _HomePageState extends State<HomePage> {
       print(_result);
 
       // TEST
-      setState(() {
-        _counter++;
-      });
+      // setState(() {
+      //   _counter++;
+      // });
       if (temprecipients.length == _counter) {
         showSimpleSnackBar(
             context, _counter.toString() + ' টি নাম্বারে মেসেজ পাঠানো হয়েছে!');
