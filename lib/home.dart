@@ -276,6 +276,7 @@ class _HomePageState extends State<HomePage> {
                                 if (_formKey.currentState!.validate()) {
                                   _sendSMS();
                                   _formKey.currentState!.reset();
+                                  _controllerMessage.text = '';
                                 }
                               },
                               child: const Text('মেসেজ পাঠান'),
