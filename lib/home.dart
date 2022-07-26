@@ -117,10 +117,7 @@ class _HomePageState extends State<HomePage> {
       bottomSheet: const Expanded(
         child: SizedBox(
           height: 40,
-          child: Text(
-            'Text',
-            textAlign: TextAlign.center,
-          ),
+          child: Text('Text'),
         ),
       ),
       appBar: AppBar(
