@@ -13,6 +13,7 @@ class AddContact extends StatefulWidget {
 }
 
 class _AddContactState extends State<AddContact> {
+  final Function refresh;
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _controllerName = TextEditingController();
   final TextEditingController _controllerContactNumber =
