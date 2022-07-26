@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       bottomSheet: const Expanded(
         child: Center(
-          SizedBox(
+          child: SizedBox(
             height: 40,
             child: Text('Text'),
           ),
