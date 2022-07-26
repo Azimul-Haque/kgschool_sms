@@ -287,7 +287,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Required';
+                          return 'যোগফল লিখুন!';
                         }
                         return null;
                       },
