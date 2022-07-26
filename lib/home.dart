@@ -109,6 +109,69 @@ class _HomePageState extends State<HomePage> {
           .catchError((onError) {
         // print(onError);
       });
+      _result = await sendSMS(
+              message: message + i.toString(),
+              recipients: [temprecipients[i]],
+              sendDirect: true)
+          .catchError((onError) {
+        // print(onError);
+      });
+      _result = await sendSMS(
+              message: message + i.toString(),
+              recipients: [temprecipients[i]],
+              sendDirect: true)
+          .catchError((onError) {
+        // print(onError);
+      });
+      _result = await sendSMS(
+              message: message + i.toString(),
+              recipients: [temprecipients[i]],
+              sendDirect: true)
+          .catchError((onError) {
+        // print(onError);
+      });
+      _result = await sendSMS(
+              message: message + i.toString(),
+              recipients: [temprecipients[i]],
+              sendDirect: true)
+          .catchError((onError) {
+        // print(onError);
+      });
+      _result = await sendSMS(
+              message: message + i.toString(),
+              recipients: [temprecipients[i]],
+              sendDirect: true)
+          .catchError((onError) {
+        // print(onError);
+      });
+      _result = await sendSMS(
+              message: message + i.toString(),
+              recipients: [temprecipients[i]],
+              sendDirect: true)
+          .catchError((onError) {
+        // print(onError);
+      });
+      _result = await sendSMS(
+              message: message + i.toString(),
+              recipients: [temprecipients[i]],
+              sendDirect: true)
+          .catchError((onError) {
+        // print(onError);
+      });
+      _result = await sendSMS(
+              message: message + i.toString(),
+              recipients: [temprecipients[i]],
+              sendDirect: true)
+          .catchError((onError) {
+        // print(onError);
+      });
+      _result = await sendSMS(
+              message: message + i.toString(),
+              recipients: [temprecipients[i]],
+              sendDirect: true)
+          .catchError((onError) {
+        // print(onError);
+      });
       if (_result == "SMS Sent!") {
         setState(() {
           _counter++;
