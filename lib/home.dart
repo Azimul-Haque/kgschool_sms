@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
     for (var i = 0; i < temprecipients.length; i++) {
       await Future.delayed(const Duration(seconds: 1));
       String _result = await sendSMS(
-              message: message,
+              message: message + i.toString(),
               recipients: [temprecipients[i]],
               sendDirect: true)
           .catchError((onError) {
