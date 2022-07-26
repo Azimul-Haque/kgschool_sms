@@ -41,7 +41,7 @@ class _ContactsListState extends State<ContactsList> {
         appBar: AppBar(
             leading: IconButton(
               icon: const Icon(Icons.arrow_back),
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () => { widget.refresh(); Navigator.of(context).pop();},
             ),
             title: appBarTitle,
             actions: <Widget>[
