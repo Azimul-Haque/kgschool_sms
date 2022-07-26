@@ -276,7 +276,7 @@ class _HomePageState extends State<HomePage> {
                             ? const CircularProgressIndicator()
                             : Container(),
                         const SizedBox(
-                          height: 1000,
+                          height: 10,
                         ),
                         showloading == true
                             ? Text(_counter.toString() +
@@ -289,7 +289,6 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            const Text('Test'),
           ],
         ),
       ),
