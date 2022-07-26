@@ -286,7 +286,7 @@ class _HomePageState extends State<HomePage> {
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       decoration: const InputDecoration(
                         icon: Icon(Icons.calculate),
-                        hintText: _counter.toString(),
+                        hintText: _counter.toString() + ' +টেক্সট মেসেজ লিখুন',
                         labelText: 'যোগফল',
                       ),
                       onChanged: (String value) {
