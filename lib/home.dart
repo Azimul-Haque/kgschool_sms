@@ -37,21 +37,17 @@ class _HomePageState extends State<HomePage> {
   static int randomNumber1 = Random().nextInt(10);
   static int randomNumber2 = Random().nextInt(10);
   static int randomSum = randomNumber1 + randomNumber2;
-  final String hint = randomNumber1.toString() + 'যোগফল';
+  final String hint = randomNumber1.toString() +
+      ' + ' +
+      randomNumber2.toString() +
+      ' = ? (ইংরেজিতে লিখুন)';
 
   @override
   void initState() {
     super.initState();
     promptSMS();
     _loadContacts();
-    setState(() {
-      randomSum = randomNumber1 + randomNumber2;
-
-      hint = randomNumber1.toString() +
-          ' + ' +
-          randomNumber2.toString() +
-          ' = ? (ইংরেজিতে লিখুন)';
-    });
+    setState(() {});
     // print(randomNumber1);
     // print(randomNumber2);
     // print(randomSum);
