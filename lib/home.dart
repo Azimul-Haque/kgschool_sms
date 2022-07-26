@@ -163,7 +163,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const ContactsList()),
+                MaterialPageRoute(builder: (context) => const ContactsList(refresh),
               );
             },
             icon: const Icon(CupertinoIcons.rectangle_stack_person_crop_fill),
