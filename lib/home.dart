@@ -273,12 +273,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                     TextFormField(
                       controller: _controllerCaptcha,
-                      maxLength: 98,
+                      maxLength: 5,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       decoration: const InputDecoration(
                         icon: Icon(Icons.sms),
                         hintText: 'টেক্সট মেসেজ লিখুন',
-                        labelText: 'মেসেজ',
+                        labelText: 'যোগফল',
                       ),
                       onChanged: (String value) {
                         setState(() {
