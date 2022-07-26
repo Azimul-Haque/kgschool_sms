@@ -45,6 +45,8 @@ class _HomePageState extends State<HomePage> {
   _loadContacts() async {
     await Future.delayed(const Duration(seconds: 1)); // THIS LITLE LINE!!!
     var newcontacts = await _contactHelper.getAllContacts();
+    contacts = [];
+    recipients = [];
     setState(() {
       contacts = newcontacts.toList();
       for (var item in contacts) {
