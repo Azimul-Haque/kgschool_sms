@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomSheet: const SizedBox(
-        height: 20,
+        height: 25,
         width: double.infinity,
         child: Text(
           'Developed by A. H. M. Azimul Haque',
