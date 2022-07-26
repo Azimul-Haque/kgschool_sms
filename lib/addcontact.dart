@@ -6,14 +6,14 @@ import 'package:kgschool_sms/globals.dart';
 import 'package:kgschool_sms/models/contact_model.dart';
 
 class AddContact extends StatefulWidget {
-  const AddContact({Key? key}) : super(key: key);
+  final Function refresh;
+  const AddContact(this.refresh, {Key? key}) : super(key: key);
 
   @override
   _AddContactState createState() => _AddContactState();
 }
 
 class _AddContactState extends State<AddContact> {
-  final Function refresh;
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _controllerName = TextEditingController();
   final TextEditingController _controllerContactNumber =
