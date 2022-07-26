@@ -6,7 +6,7 @@ import 'package:sqflite/sqflite.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await db!.execute("DROP TABLE IF EXISTS tableName");
+  await db!.execute("DROP TABLE IF EXISTS contacts");
   db = await openDatabase(join(await getDatabasesPath(), "contacts.db"),
       onCreate: (db, version) {
     return db.execute(
