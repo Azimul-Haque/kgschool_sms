@@ -110,6 +110,7 @@ class _HomePageState extends State<HomePage> {
           showloading = false;
         });
       }
+      _controllerMessage.text = '';
     }
   }
   // void _incrementCounter() {
