@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                 'মোট নাম্বারঃ ',
               ),
               Text(
-                recipients.length.toString(),
+                'মোট নাম্বারঃ ' + recipients.length.toString(),
                 style: Theme.of(context).textTheme.headline4,
               ),
               const Divider(),
