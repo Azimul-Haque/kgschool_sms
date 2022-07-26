@@ -201,7 +201,9 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               Text(
                 'মোট নাম্বারঃ ' + recipients.length.toString(),
-                style: Theme.of(context).textTheme.subtitle1,
+                style: const TextStyle(
+                  fontSize: 15,
+                ),
               ),
               const Divider(),
               Form(
