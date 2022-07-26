@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   final _formKey = GlobalKey<FormState>();
   late ContactModel newContact;
   final ContactHelper _contactHelper = ContactHelper();
-  FocusNode _focusNode;
+  final FocusNode _focusNode;
   final TextEditingController _controllerMessage = TextEditingController();
   final TextEditingController _controllerCaptcha = TextEditingController();
   List<ContactModel> contacts = [];
