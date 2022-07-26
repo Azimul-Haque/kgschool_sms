@@ -142,6 +142,7 @@ class _HomePageState extends State<HomePage> {
                     _contactHelper.insertContact(newContact);
                     totalpassed++;
                   }
+                  _loadContacts();
                   showSimpleSnackBar(context,
                       totalpassed.toString() + ' টি নম্বর যোগ করা হয়েছে!');
                 });
