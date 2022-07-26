@@ -45,6 +45,8 @@ class _HomePageState extends State<HomePage> {
     _loadContacts();
     setState(() {
       randomNumber1 = random.nextInt(10);
+      randomNumber2 = random.nextInt(10);
+      randomSum = randomNumber1 + randomNumber2;
     });
     // print(randomNumber1);
     // print(randomNumber2);
