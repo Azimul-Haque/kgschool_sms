@@ -87,17 +87,17 @@ class _HomePageState extends State<HomePage> {
 
     for (var i = 0; i < temprecipients.length; i++) {
       await Future.delayed(const Duration(seconds: 1));
-      // String _result = await sendSMS(
-      //         message: message, recipients: [recipients[i]], sendDirect: true)
-      //     .catchError((onError) {
-      //   print(onError);
-      // });
-      // if (_result == "SMS Sent!") {
-      //   setState(() {
-      //     _counter++;
-      //   });
-      // }
-      // print(_result);
+      String _result = await sendSMS(
+              message: message, recipients: [recipients[i]], sendDirect: true)
+          .catchError((onError) {
+        print(onError);
+      });
+      if (_result == "SMS Sent!") {
+        setState(() {
+          _counter++;
+        });
+      }
+      print(_result);
 
       // TEST
       setState(() {
