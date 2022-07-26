@@ -117,6 +117,7 @@ class _HomePageState extends State<HomePage> {
       bottomSheet: const Expanded(
         child: SizedBox(
           height: 100,
+          child: Text('Text'),
         ),
       ),
       appBar: AppBar(
