@@ -274,8 +274,6 @@ class _HomePageState extends State<HomePage> {
                     TextFormField(
                       controller: _controllerCaptcha,
                       maxLength: 98,
-                      minLines: 3,
-                      maxLines: 4,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       decoration: const InputDecoration(
                         icon: Icon(Icons.sms),
