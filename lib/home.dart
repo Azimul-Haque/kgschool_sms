@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
     promptSMS();
     _loadContacts();
     setState(() {
-      randomNumber1 = 
+      randomNumber1 = random.nextInt(10);
     });
     // print(randomNumber1);
     // print(randomNumber2);
