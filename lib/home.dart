@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
 
   void _sendSMS() async {
     // List<String> recipients = ["01837409842", "01751398392", "01744834258"];
+    print(recipients);
     setState(() {
       showloading = true;
     });
