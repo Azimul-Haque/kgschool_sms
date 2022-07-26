@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   int dropdownvalue = 0;
   final int randomNumber1 = Random().nextInt(10);
   final int randomNumber2 = Random().nextInt(10);
-  final int randomSum;
+  final int randomSum = randomNumber1 + randomNumber2;
   static const String hint = 'যোগফল';
 
   @override
@@ -45,9 +45,8 @@ class _HomePageState extends State<HomePage> {
     promptSMS();
     _loadContacts();
     setState(() {
-      randomNumber1 = random.nextInt(10);
-      randomNumber2 = random.nextInt(10);
       randomSum = randomNumber1 + randomNumber2;
+
       hint = randomNumber1.toString() +
           ' + ' +
           randomNumber2.toString() +
