@@ -297,4 +297,8 @@ class _HomePageState extends State<HomePage> {
       // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  refresh() {
+    _loadContacts();
+  }
 }
