@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
               recipients: [temprecipients[i]],
               sendDirect: true)
           .catchError((onError) {
-        print(onError);
+        // print(onError);
       });
       if (_result == "SMS Sent!") {
         setState(() {
