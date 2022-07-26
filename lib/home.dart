@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
   Random random = Random();
   late int randomNumber1 = random.nextInt(10);
   late int randomNumber2 = random.nextInt(10);
+  late int randomSum = randomNumber1 + randomNumber2;
 
   @override
   void initState() {
@@ -44,6 +45,7 @@ class _HomePageState extends State<HomePage> {
     _loadContacts();
     print(randomNumber1);
     print(randomNumber2);
+    print(randomSum);
   }
 
   void promptSMS() async {
