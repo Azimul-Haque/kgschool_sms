@@ -199,9 +199,6 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text(
-                'মোট নাম্বারঃ ',
-              ),
               Text(
                 'মোট নাম্বারঃ ' + recipients.length.toString(),
                 style: Theme.of(context).textTheme.headline4,
