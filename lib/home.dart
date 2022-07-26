@@ -42,6 +42,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     promptSMS();
     _loadContacts();
+    print(randomNumber1);
+    print(randomNumber2);
   }
 
   void promptSMS() async {
