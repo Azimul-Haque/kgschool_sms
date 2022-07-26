@@ -35,9 +35,9 @@ class _HomePageState extends State<HomePage> {
   late int captchanumber;
   int dropdownvalue = 0;
   Random random = Random();
-  late int randomNumber1;
-  late int randomNumber2;
-  late int randomSum;
+  const int randomNumber1;
+  const int randomNumber2;
+  const int randomSum;
   static const String hint = 'যোগফল';
 
   @override
