@@ -86,6 +86,12 @@ class _ContactsListState extends State<ContactsList> {
                 child: ListTile(
                   title:
                       Text('মোট নাম্বারঃ ' + adhoccontacts.length.toString()),
+                  trailing: IconButton(
+                    onPressed: () {
+                      showDropTableDialog(context);
+                    },
+                    icon: const Icon(Icons.cleaning_services_outlined),
+                  ),
                 ),
                 margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
               ),
@@ -215,6 +221,37 @@ class _ContactsListState extends State<ContactsList> {
                 _contactHelper.deleteContact(contactid);
                 Navigator.of(context).pop();
 
+                _loadContacts();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> showDropTableDialog(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Delete Contact List'),
+          content: const Text(
+              'আপনি কি নিশ্চিতভাবে পুরো কন্টাক্টলিস্ট ডিলেট করতে চান?'),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: const Text('Delete'),
+              onPressed: () {
+                showSimpleSnackBar(context, 'Deleted successfully');
+                _contactHelper.dropContactTable();
+                Navigator.of(context).pop();
                 _loadContacts();
               },
             ),

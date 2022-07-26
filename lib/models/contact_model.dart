@@ -97,7 +97,15 @@ class ContactHelper {
     try {
       await db.rawDelete("DELETE from $tableName where 0=0");
     } catch (_) {
-      print(_);
+      // print(_);
+    }
+  }
+
+  Future<void> dropContactTable() async {
+    try {
+      await db.delete(tableName);
+    } catch (_) {
+      // print(_);
     }
   }
 

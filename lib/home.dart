@@ -19,12 +19,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _formKey = GlobalKey<FormState>();
   late ContactModel newContact;
   final ContactHelper _contactHelper = ContactHelper();
+  final TextEditingController _controllerMessage = TextEditingController();
   List<ContactModel> contacts = [];
   List<String> recipients = [];
   int _counter = 0;
+  bool showloading = false;
   late String parseddata = '';
+  late String message;
+  int dropdownvalue = 0;
 
   @override
   void initState() {
@@ -41,7 +46,7 @@ class _HomePageState extends State<HomePage> {
     await Future.delayed(const Duration(seconds: 1)); // THIS LITLE LINE!!!
     var newcontacts = await _contactHelper.getAllContacts();
     setState(() {
-      contacts = newcontacts.reversed.toList();
+      contacts = newcontacts.toList();
       for (var item in contacts) {
         recipients.add(item.contactnumber);
       }
@@ -49,22 +54,55 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _sendSMS() async {
-    String message = "This is a test message 654654!";
     // List<String> recipients = ["01837409842", "01751398392", "01744834258"];
-    print(recipients);
-    // for (var i = 0; i < recipients.length; i++) {
-    //   String _result = await sendSMS(
-    //           message: message, recipients: [recipients[i]], sendDirect: true)
-    //       .catchError((onError) {
-    //     print(onError);
-    //   });
-    //   if (_result == "SMS Sent!") {
-    //     setState(() {
-    //       _counter++;
-    //     });
-    //   }
-    //   print(_result);
-    // }
+    setState(() {
+      showloading = true;
+    });
+    FocusScope.of(context).requestFocus(FocusNode());
+    List temprecipients = [];
+    if (dropdownvalue == 220) {
+      for (var i = 0; i < 220; i++) {
+        temprecipients.add(recipients[i]);
+      }
+    } else if (dropdownvalue == 221) {
+      for (var i = 220; i < recipients.length; i++) {
+        temprecipients.add(recipients[i]);
+      }
+    }
+    print(temprecipients.length);
+    print(temprecipients.toString());
+    print(dropdownvalue);
+    print(message);
+    _counter = 0;
+
+    // showLoadingDialog(context);
+
+    for (var i = 0; i < temprecipients.length; i++) {
+      await Future.delayed(const Duration(seconds: 1));
+      // String _result = await sendSMS(
+      //         message: message, recipients: [recipients[i]], sendDirect: true)
+      //     .catchError((onError) {
+      //   print(onError);
+      // });
+      // if (_result == "SMS Sent!") {
+      //   setState(() {
+      //     _counter++;
+      //   });
+      // }
+      // print(_result);
+
+      // TEST
+      setState(() {
+        _counter++;
+      });
+      if (temprecipients.length == _counter) {
+        showSimpleSnackBar(
+            context, _counter.toString() + ' টি নাম্বারে মেসেজ পাঠানো হয়েছে!');
+        setState(() {
+          showloading = false;
+        });
+      }
+    }
   }
   // void _incrementCounter() {
   //   setState(() {
@@ -147,63 +185,115 @@ class _HomePageState extends State<HomePage> {
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   const Divider(),
-                  DropdownButton<String>(
-                    hint: const Text('কতগুলো মেসেজ পাঠাতে চান?'),
-                    isExpanded: true,
-                    items: <String>[
-                      'কতগুলো মেসেজ পাঠাতে চান?',
-                      'প্রথম ২৫০ টি নম্বরে',
-                      '২৫১ নম্বর থেকে পরবর্তী সকল নম্বরে'
-                    ].map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (value) {
-                      print(value);
-                    },
-                  ),
-                  const Divider(),
-                  TextFormField(
-                    maxLength: 200,
-                    toolbarOptions:
-                        const ToolbarOptions(copy: true, paste: true),
-                    minLines: 3,
-                    maxLines: 4,
-                    autovalidateMode: AutovalidateMode.always,
-                    decoration: const InputDecoration(
-                      icon: Icon(Icons.sms),
-                      hintText: 'টেক্সট মেসেজ লিখুন',
-                      labelText: 'মেসেজ',
+                  Form(
+                    key: _formKey,
+                    child: Column(
+                      children: <Widget>[
+                        DropdownButtonFormField<String>(
+                          value: 'কতগুলো মেসেজ পাঠাতে চান?',
+                          hint: const Text('কতগুলো মেসেজ পাঠাতে চান?'),
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          isExpanded: true,
+                          items: <String>[
+                            'কতগুলো মেসেজ পাঠাতে চান?',
+                            'প্রথম ২২০ টি নম্বরে',
+                            '২২১ নম্বর থেকে পরবর্তী সকল নম্বরে'
+                          ].map((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          validator: (value) {
+                            if (value == 'কতগুলো মেসেজ পাঠাতে চান?') {
+                              return 'Required';
+                            }
+                            return null;
+                          },
+                          onChanged: (value) {
+                            if (value == 'প্রথম ২২০ টি নম্বরে') {
+                              setState(() {
+                                dropdownvalue = 220;
+                              });
+                            } else if (value ==
+                                '২২১ নম্বর থেকে পরবর্তী সকল নম্বরে') {
+                              setState(() {
+                                dropdownvalue = 221;
+                              });
+                            }
+                            print(value);
+                          },
+                        ),
+                        const Divider(),
+                        TextFormField(
+                          controller: _controllerMessage,
+                          maxLength: 98,
+                          toolbarOptions: const ToolbarOptions(
+                              copy: true,
+                              paste: true,
+                              cut: true,
+                              selectAll: true),
+                          minLines: 3,
+                          maxLines: 4,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          decoration: const InputDecoration(
+                            icon: Icon(Icons.sms),
+                            hintText: 'টেক্সট মেসেজ লিখুন',
+                            labelText: 'মেসেজ',
+                          ),
+                          onChanged: (String value) {
+                            setState(() {
+                              message = value;
+                            });
+                          },
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Required';
+                            }
+                            return null;
+                          },
+                        ),
+                        const Divider(),
+                        SizedBox(
+                          width: 400,
+                          child: showloading == false
+                              ? ElevatedButton(
+                                  onPressed: () {
+                                    if (_formKey.currentState!.validate()) {
+                                      _sendSMS();
+                                      _formKey.currentState!.reset();
+                                    }
+                                  },
+                                  child: const Text('মেসেজ পাঠান'),
+                                )
+                              : Container(),
+                        ),
+                        const Divider(),
+                        showloading == true
+                            ? const CircularProgressIndicator()
+                            : Container(),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        showloading == true
+                            ? Text(_counter.toString() +
+                                ' টি নাম্বারে পাঠানো হয়েছে।')
+                            : Container(),
+                      ],
                     ),
-                    onSaved: (value) {},
-                    validator: (value) {},
                   ),
-                  const Divider(),
-                  SizedBox(
-                    width: 400,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // if (_formKey.currentState!.validate()) {
-                        //   _updateContact();
-                        // }
-                      },
-                      child: const Text('মেসেজ পাঠান'),
-                    ),
-                  ),
-                  Text(parseddata),
+                  // Text(parseddata),
                 ],
               ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _sendSMS,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _sendSMS,
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
