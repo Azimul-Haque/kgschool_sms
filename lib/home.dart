@@ -293,7 +293,7 @@ class _HomePageState extends State<HomePage> {
                       decoration: InputDecoration(
                         icon: const Icon(Icons.calculate),
                         hintText: hint,
-                        labelText: 'যোগফল',
+                        labelText: hint,
                       ),
                       onChanged: (String value) {
                         setState(() {
