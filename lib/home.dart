@@ -128,6 +128,7 @@ class _HomePageState extends State<HomePage> {
         });
       }
       _controllerMessage.text = '';
+      _controllerCaptcha.text = '';
     }
   }
   // void _incrementCounter() {
