@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   int dropdownvalue = 0;
   final int randomNumber1 = Random().nextInt(10);
   final int randomNumber2 = Random().nextInt(10);
-  static int randomSum = randomNumber1 + randomNumber2;
+  final int randomSum = randomNumber1 + randomNumber2;
   static const String hint = randomNumber1.toString() +
       ' + ' +
       randomNumber2.toString() +
