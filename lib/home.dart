@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   late ContactModel newContact;
   final ContactHelper _contactHelper = ContactHelper();
   final TextEditingController _controllerMessage = TextEditingController();
+  final TextEditingController _controllerCaptcha = TextEditingController();
   List<ContactModel> contacts = [];
   List<String> recipients = [];
   int _counter = 0;
@@ -247,6 +248,31 @@ class _HomePageState extends State<HomePage> {
                     const Divider(),
                     TextFormField(
                       controller: _controllerMessage,
+                      maxLength: 98,
+                      toolbarOptions: const ToolbarOptions(
+                          copy: true, paste: true, cut: true, selectAll: true),
+                      minLines: 3,
+                      maxLines: 4,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      decoration: const InputDecoration(
+                        icon: Icon(Icons.sms),
+                        hintText: 'টেক্সট মেসেজ লিখুন',
+                        labelText: 'মেসেজ',
+                      ),
+                      onChanged: (String value) {
+                        setState(() {
+                          message = value;
+                        });
+                      },
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Required';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      controller: _controllerCaptcha,
                       maxLength: 98,
                       toolbarOptions: const ToolbarOptions(
                           copy: true, paste: true, cut: true, selectAll: true),
