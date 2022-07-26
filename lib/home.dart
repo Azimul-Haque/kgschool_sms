@@ -290,8 +290,8 @@ class _HomePageState extends State<HomePage> {
                       maxLength: 5,
                       keyboardType: TextInputType.number,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
-                      decoration: const InputDecoration(
-                        icon: Icon(Icons.calculate),
+                      decoration: InputDecoration(
+                        icon: const Icon(Icons.calculate),
                         hintText: hint,
                         labelText: 'যোগফল',
                       ),
