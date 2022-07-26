@@ -283,7 +283,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onChanged: (String value) {
                         setState(() {
-                          captchanumber = value;
+                          captchanumber = value as int;
                         });
                       },
                       validator: (value) {
