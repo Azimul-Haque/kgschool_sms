@@ -303,7 +303,7 @@ class _HomePageState extends State<HomePage> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'যোগফল লিখুন!';
-                        }
+                        } else if (value != randomSum) {}
                         return null;
                       },
                     ),
